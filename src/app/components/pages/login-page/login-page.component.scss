@@ -1,0 +1,248 @@
+.login-form {
+    padding-right: 50px;
+
+    h2 {
+        margin-bottom: 15px;
+        font-size: 35px;
+    }
+    p {
+        a {
+            font-weight: 600;
+        }
+    }
+    form {
+        margin-top: 25px;
+
+        .form-group {
+            margin-bottom: 25px;
+
+            label {
+                display: block;
+                margin-bottom: 12px;
+                font: {
+                    size: var(--fontSize);
+                    weight: 600;
+                };
+            }
+            .form-control {
+                height: 55px;
+                border: none;
+                box-shadow: unset;
+                line-height: 55px;
+                border-radius: 5px;
+                color: var(--blackColor);
+                font-size: var(--fontSize);
+                background-color: #f9f9f9;
+                font: {
+                    size: var(--fontSize);
+                    weight: 500;
+                };
+                padding: {
+                    top: 0;
+                    left: 20px;
+                    right: 20px;
+                    bottom: 2px;
+                };
+                &::placeholder {
+                    color: var(--paragraphColor);
+                    transition: var(--transition);
+                }
+                &:focus {
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+        }
+        .remember-me-wrap {
+            margin-bottom: 0;
+
+            .form-check {
+                cursor: pointer;
+                margin-bottom: 0;
+                color: var(--blackColor);
+    
+                .form-check-input {
+                    margin-top: .24em;
+                    box-shadow: unset !important;
+    
+                    &[type=checkbox] {
+                        border-radius: 0;
+                    }
+                    &:checked {
+                        background-color: var(--primaryColor);
+                        border-color: var(--primaryColor);
+                    }
+                    &:focus {
+                        border-color: var(--primaryColor);
+                    }
+                }
+                .form-check-label {
+                    cursor: pointer;
+                }
+            }
+        }
+        .lost-your-password-wrap {
+            text-align: end;
+
+            a {
+                display: inline-block;
+                position: relative;
+                line-height: 1.5;
+
+                &::before {
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 1px;
+                    content: '';
+                    position: absolute;
+                    background-color: #eeeeee;
+                    transition: var(--transition);
+                }
+                &::after {
+                    left: 0;
+                    width: 0;
+                    bottom: 0;
+                    height: 1px;
+                    content: '';
+                    position: absolute;
+                    transition: var(--transition);
+                    background-color: var(--primaryColor);
+                }
+                &:hover {
+                    color: var(--primaryColor);
+
+                    &::before {
+                        width: 0;
+                    }
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        button {
+            width: 100%;
+            border: none;
+            display: block;
+            text-align: center;
+            border-radius: 5px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            color: var(--whiteColor);
+            background-color: var(--primaryColor);
+            transition: var(--transition);
+            font: {
+                size: var(--fontSize);
+                weight: 600;
+            };
+            &:hover {
+                background-color: var(--secondaryColor);
+                color: var(--whiteColor);
+            }
+        }
+    }
+}
+.login-image {
+    padding-left: 50px;
+    text-align: center;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .login-form {
+        padding-right: 0;
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        form {
+            margin-top: 20px;
+
+            .form-group {
+                margin-bottom: 20px;
+
+                .form-control {
+                    height: 50px;
+                    line-height: 50px;
+                    font-size: 14px;
+                    padding: {
+                        left: 15px;
+                        right: 15px;
+                    };
+                }
+            }
+            button {
+                padding: 13px 30px;
+                font-size: 14px;
+            }
+        }
+    }
+    .login-image {
+        padding-left: 0;
+        margin-top: 25px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .login-form {
+        padding-right: 0;
+
+        h2 {
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+        form {
+            margin-top: 20px;
+
+            .form-group {
+                margin-bottom: 20px;
+
+                .form-control {
+                    line-height: 50px;
+                    font-size: 15px;
+                    height: 50px;
+                    padding: {
+                        left: 15px;
+                        right: 15px;
+                    };
+                }
+            }
+            button {
+                padding: 14px 30px;
+                font-size: 15px;
+            }
+        }
+    }
+    .login-image {
+        padding-left: 0;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .login-form {
+        padding-right: 20px;
+    }
+    .login-image {
+        padding-left: 20px;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,43 @@
+<div class="stories-area ptb-100 bg-f9f9f9">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">SUCCESS STORIES</span>
+            <h2>We are here to help you live longer, not just treat</h2>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-12">
+                <div class="stories-content">
+                    <div class="icon">
+                        <i class="flaticon-virus"></i>
+                    </div>
+                    <h3><a routerLink="/services-details">COVID-19 Survivors</a></h3>
+                    <p>Although most COVID-19 patients recover within a few weeks, some can experience fatigue, difficulty concentrating, headaches, dizziness, palpitations, difficulty breathing, and depression for weeks or months after the infection.</p>
+                    <a routerLink="/services-details" class="default-btn">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="stories-slides">
+                   <owl-carousel-o [options]="storiesSlides">
+                        <ng-template carouselSlide>
+                            <div class="stories-item">
+                                <img src="assets/img/stories/stories1.jpg" alt="stories-image">
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="stories-item">
+                                <img src="assets/img/stories/stories2.jpg" alt="stories-image">
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="stories-item">
+                                <img src="assets/img/stories/stories3.jpg" alt="stories-image">
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

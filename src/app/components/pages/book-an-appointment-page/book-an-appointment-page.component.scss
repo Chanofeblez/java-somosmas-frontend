@@ -1,0 +1,176 @@
+.doctor-calendar-table {
+    border-radius: 10px;
+    background-color: var(--whiteColor);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    table {
+        margin-bottom: 0;
+
+        >:not(:first-child) {
+            border-top: none;
+        }
+        thead {
+            tr {
+                th {
+                    border: none;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    color: var(--whiteColor);
+                    text-transform: uppercase;
+                    background-color: var(--primaryColor);
+                    font: {
+                        size: var(--fontSize);
+                        weight: 600;
+                    };
+                    padding: {
+                        top: 15px;
+                        bottom: 15px;
+                    };
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    transition: var(--transition);
+                    border: 1px solid #eeeeee;
+                    vertical-align: middle;
+                    white-space: nowrap;
+                    text-align: center;
+                    border-top: none;
+                    padding: 25px;
+
+                    &:first-child {
+                        border-left: none;
+                    }
+                    &:last-child {
+                        border-right: none;
+                    }
+                    h3 {
+                        font-size: 17px;
+                        margin-bottom: 7px;
+                        transition: var(--transition);
+                    }
+                    span {
+                        display: block;
+                        color: var(--paragraphColor);
+                        transition: var(--transition);
+
+                        &.time {
+                            width: 65px;
+                            height: 65px;
+                            line-height: 64px;
+                            border-radius: 50%;
+                            display: inline-block;
+                            color: var(--primaryColor);
+                            background-color: #edfaff;
+                            transition: var(--transition);
+                            font: {
+                                weight: 600;
+                                size: var(--fontSize);
+                            };
+                        }
+                    }
+                    &:hover {
+                        background-color: var(--primaryColor);
+                        border-color: var(--primaryColor);
+
+                        h3 {
+                            color: var(--whiteColor);
+                        }
+                        span {
+                            color: var(--whiteColor);
+
+                            &.time {
+                                background-color: var(--whiteColor);
+                                color: var(--primaryColor);
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    td {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .doctor-calendar-table {
+        table {
+            thead {
+                tr {
+                    th {
+                        font-size: 14px;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        padding: 15px;
+
+                        h3 {
+                            font-size: 14px;
+                        }
+                        span {
+                            &.time {
+                                width: 55px;
+                                height: 55px;
+                                font-size: 14px;
+                                line-height: 55px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .doctor-calendar-table {
+        table {
+            thead {
+                tr {
+                    th {
+                        font-size: 15px;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        padding: 20px;
+
+                        h3 {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

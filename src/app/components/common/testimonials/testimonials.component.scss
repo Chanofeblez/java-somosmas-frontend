@@ -1,0 +1,217 @@
+.testimonials-image {
+    border-radius: 15px;
+    padding-right: 5px;
+
+    img {
+        border-radius: 15px;
+    }
+}
+.testimonials-content {
+    padding-left: 5px;
+
+    .section-title {
+        max-width: 100%;
+        text-align: start;
+        margin-bottom: 40px;
+    }
+    .single-testimonial-item {
+        margin-bottom: 0;
+        box-shadow: unset;
+    }
+    .testimonials-slides {
+        border-radius: 7px;
+        box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.1);
+    }
+}
+.single-testimonial-item {
+    padding: 50px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: var(--whiteColor);
+    box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.1);
+
+    i {
+        line-height: 1;
+        display: block;
+        font-size: 50px;
+        color: var(--primaryColor);
+        margin: {
+            top: -5px;
+            bottom: 8px;
+        };
+    }
+    p {
+        font: {
+            size: 18px;
+            weight: 500;
+        };
+    }
+    .client-info {
+        margin-top: 25px;
+
+        img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+        }
+        .title {
+            margin-left: 15px;
+
+            h3 {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            span {
+                display: block;
+                font-size: 15px;
+                color: var(--paragraphColor);
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .testimonials-image {
+        padding-right: 0;
+        margin-bottom: 25px;
+        border-radius: 10px;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+    .testimonials-content {
+        padding-left: 0;
+
+        .section-title {
+            margin-bottom: 25px;
+        }
+        .testimonials-slides {
+            padding-bottom: 20px;
+        }
+    }
+    .single-testimonial-item {
+        padding: 20px;
+
+        i {
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 15px;
+        }
+        .client-info {
+            margin-top: 15px;
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            .title {
+                h3 {
+                    font-size: 15px;
+                    margin-bottom: 4px;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .testimonials-image {
+        margin-bottom: 25px;
+        padding-right: 0;
+    }
+    .testimonials-content {
+        padding-left: 0;
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+    }
+    .single-testimonial-item {
+        padding: 35px;
+
+        i {
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .client-info {
+            margin-top: 20px;
+
+            img {
+                width: 55px;
+                height: 55px;
+            }
+            .title {
+                h3 {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .testimonials-image {
+        padding-right: 0;
+    }
+    .testimonials-content {
+        padding-left: 0;
+
+        .section-title {
+            margin-bottom: 25px;
+
+            h2 {
+                font-size: 33px;
+            }
+        }
+    }
+    .single-testimonial-item {
+        padding: 30px;
+
+        i {
+            font-size: 45px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .client-info {
+            margin-top: 15px;
+
+            img {
+                width: 60px;
+                height: 60px;
+            }
+            .title {
+                h3 {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

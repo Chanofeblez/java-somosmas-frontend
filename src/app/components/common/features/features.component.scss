@@ -1,0 +1,198 @@
+.featured-area {
+    &.style-two {
+        margin-top: -150px;
+        position: relative;
+        z-index: 1;
+    }
+}
+.single-featured-box {
+    padding: 35px;
+    margin-bottom: 25px;
+    background-color: #f9f9f9;
+
+    .icon {
+        background-color: var(--whiteColor);
+        transition: var(--transition);
+        color: var(--primaryColor);
+        margin-bottom: 20px;
+        border-radius: 50%;
+        position: relative;
+        font-size: 50px;
+        height: 75px;
+        width: 75px;
+
+        i {
+            left: 0;
+            top: 50%;
+            line-height: 1;
+            margin-top: 2px;
+            position: absolute;
+            color: var(--primaryColor);
+            transform: translateY(-50%);
+            transition: var(--transition);
+        }
+    }
+    h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+    &:hover {
+        .icon {
+            background-color: var(--primaryColor);
+            color: var(--whiteColor);
+
+            i {
+                left: 50%;
+                color: var(--whiteColor);
+                transform: translateY(-50%) translateX(-50%);
+            }
+        }
+    }
+}
+.single-featured-item {
+    padding: 35px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    transition: var(--transition);
+    background-color: var(--whiteColor);
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+
+    .icon {
+        transition: var(--transition);
+        background-color: #f9f9f9;
+        color: var(--primaryColor);
+        margin-bottom: 20px;
+        border-radius: 50%;
+        position: relative;
+        font-size: 50px;
+        height: 75px;
+        width: 75px;
+
+        i {
+            left: 0;
+            top: 50%;
+            line-height: 1;
+            margin-top: 2px;
+            position: absolute;
+            color: var(--primaryColor);
+            transform: translateY(-50%);
+            transition: var(--transition);
+        }
+    }
+    h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+        transition: var(--transition);
+    }
+    p {
+        transition: var(--transition);
+    }
+    &:hover {
+        background-color: var(--primaryColor);
+
+        h3, p {
+            color: var(--whiteColor);
+        }
+        .icon {
+            background-color: var(--whiteColor);
+            color: var(--primaryColor);
+
+            i {
+                left: 50%;
+                color: var(--primaryColor);
+                transform: translateY(-50%) translateX(-50%);
+            }
+        }
+    }
+}
+.d-none {
+    &.d-block {
+        display: block !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .featured-area {
+        &.style-two {
+            margin-top: 0;
+            padding-top: 60px;
+        }
+    }
+    .single-featured-box {
+        padding: 20px;
+
+        h3 {
+            font-size: 17px;
+        }
+    }
+    .single-featured-item {
+        padding: 20px;
+
+        h3 {
+            font-size: 17px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .featured-area {
+        &.style-two {
+            margin-top: -80px;
+        }
+    }
+    .single-featured-box {
+        padding: 25px;
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .single-featured-item {
+        padding: 25px;
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .featured-area {
+        &.style-two {
+            margin-top: 0;
+            padding-top: 100px;
+        }
+    }
+    .single-featured-box {
+        padding: 23px;
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .single-featured-item {
+        padding: 23px;
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,433 @@
+<!-- Navbar -->
+<div
+    class="navbar-area"
+    stickyClass="sticky-box-shadow"
+    ngStickyNav
+    [ngClass]="{'p-absolute': router.url === '/index-3'}"
+>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" [class.active]="classApplied">
+            <a
+                class="navbar-brand"
+                routerLink="/"
+                [ngClass]="{'d-none': router.url === '/index-3'}"
+            >
+                <img src="assets/img/somosmaslogo1.0.png" alt="logo">
+            </a>
+            <a
+                class="navbar-brand d-none"
+                routerLink="/"
+                [ngClass]="{'d-inline': router.url === '/index-3'}"
+            >
+                <img src="assets/img/somosmaslogo1.0.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" (click)="toggleClass()">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Somos Mas</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/privacy-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Mission</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/terms-conditions" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Regulations for the Presidential Election</a>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a routerLink="/index-3" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Coordinators</a>
+                            </li>-->
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/about" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact Us</a>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a routerLink="/login" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/register" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/forgot-password" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Forgot Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/faq" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/privacy-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Privacy Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/terms-conditions" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Terms & Conditions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/coming-soon" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Coming Soon</a>
+                            </li>-->
+                            <li class="nav-item">
+                                <a routerLink="/not-found" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">404 Error Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/thank-you" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Thank You</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Services</a>
+                        <ul class="dropdown-menu">
+                          <!--  <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">COVID-19</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">Dermatology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">Hepatology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">Dentistry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">Cardiology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-1" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Services Style - One</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-2" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Services Style - Two</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Services Details</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Board</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <!-- routerLink="/doctors" -->
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Coordinators</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- routerLink="/doctors-profile" -->
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Board</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/blog-grid" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blogs</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Blog</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/blog-grid" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog Grid</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/blog-left-sidebar" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog Left Sidebar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/blog-right-sidebar" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog Right Sidebar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/blog-special" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog Special</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">Single Layouts</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Left Sidebar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-details-2" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Right Sidebar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-details-3" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">No Sidebar</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">Extra</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-categories" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Categories</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-tag" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tag</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-search-result" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Search Result</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item">
+                        <a routerLink="/login" *ngIf="loginB" login=!login class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login/Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/login" *ngIf="!loginB" login=!login class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Logout</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav for-responsive">
+                    <li class="nav-item">
+                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Somos Mas</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/privacy-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Mission</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/index-2" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Regulations for the Presidential Election</a>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a routerLink="/index-3" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Coordinators</a>
+                            </li>-->
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/about" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact Us</a>
+                            </li>
+                           <!-- <li class="nav-item">
+                                <a routerLink="/login" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/register" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Register</a> 
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/forgot-password" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Forgot Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/faq" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/privacy-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Privacy Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/terms-conditions" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Terms & Conditions</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a routerLink="/coming-soon" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Coming Soon</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/not-found" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">404 Error Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/thank-you" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Thank You</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Services</a>
+                        <ul class="dropdown-menu">
+                          <!--  <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">COVID-19</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">Dermatology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">Hepatology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">Dentistry</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link">Cardiology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-1" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Services Style - One</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-2" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Services Style - Two</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/services-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Services Details</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Board</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/doctors" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Coordinators</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/doctor-profile" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Board</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/blog-grid" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blogs</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">Blog</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/blog-grid" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog Grid</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/blog-left-sidebar" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog Left Sidebar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/blog-right-sidebar" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog Right Sidebar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/blog-special" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog Special</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">Single Layouts</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Left Sidebar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-details-2" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Right Sidebar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-details-3" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">No Sidebar</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">Extra</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-categories" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Categories</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-tag" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tag</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-search-result" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Search Result</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>-->
+                    <li class="nav-item">
+                        <a routerLink="/login" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login/Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/login" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Logout</a>
+                    </li>
+                </ul>
+                <div class="others-option d-flex align-items-center">
+                    <div class="search-icon" (click)="searchToggleClass()">
+                        <i class='flaticon-search-interface-symbol'></i>
+                    </div>
+                    <div>
+                        <button type="button" (click)="switcherToggleClass()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div> 
+
+<!-- Search Overlay -->
+<div class="search-overlay" [class.search-overlay-active]="searchClassApplied">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-close" (click)="searchToggleClass()">
+                <span class="search-overlay-close-line"></span>
+                <span class="search-overlay-close-line"></span>
+            </div>
+            <div class="search-overlay-form">
+                <form>
+                    <input type="text" class="input-search" placeholder="Enter your keywords...">
+                    <button type="submit"><i class='flaticon-search-interface-symbol'></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="sidebarModal" [class.active]="switcherClassApplied">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" (click)="switcherToggleClass()">
+                <i class='flaticon-cancel'></i>
+            </button>
+            <div class="modal-body">
+                <div class="logo">
+                    <a routerLink="/" class="d-inline-block">
+                        <img src="assets/img/somosmaslogo1.0.png" alt="image">
+                    </a>
+                </div>
+                <ul class="sidebar-contact-info">
+                    <li>
+                        <i class="ph-phone-call"></i>
+                        <span>Mon to Fri : 08:00AM - 004:00PM</span>
+                        <a href="tel:+1(305) 965-3016">+1(305) 965-3016</a>
+                    </li>
+                    <li>
+                        <i class="ph-envelope-simple-open"></i>
+                        <span>Do You Have a Question?</span>
+                        <a href="mailto:Info@somosmas.net">Info&#64;somosmas.net</a>
+                    </li>
+                    <li>
+                        <i class="ph-map-pin"></i>
+                        <span>2124 Coral Wy, Coral Gable, Miami, FL 33145, United State.</span>
+                        <a href="https://maps.google.com/" target="_blank">Find Us on Map</a>
+                    </li>
+                </ul>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com/" target="_blank">
+                        <i class="flaticon-facebook-app-symbol"></i>
+                    </a></li>
+                    <li><a href="https://twitter.com/" target="_blank">
+                        <i class="flaticon-twitter"></i>
+                    </a></li>
+                    <li><a href="https://www.linkedin.com/" target="_blank">
+                        <i class="flaticon-linkedin"></i>
+                    </a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank">
+                        <i class="flaticon-instagram"></i>
+                    </a></li>
+                </ul>
+                <div class="box">
+                    <p>Latest resources, sent to your inbox weekly</p>
+                    <form class="newsletter-form">
+                        <input type="text" class="input-newsletter" placeholder="Enter your email address">
+                        <button type="submit" class="default-btn style-two">
+                            <i class="flaticon-calendar-1"></i>
+                            Send Email
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

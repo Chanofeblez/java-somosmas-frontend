@@ -1,0 +1,596 @@
+@import "../../common/doctors/doctors.component.scss";
+
+.doctor-profile-area {
+    padding-top: 50px;
+}
+.profile-description {
+    h3 {
+        font-size: 20px;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e0e0e0;
+        
+        &:not(:first-child) {
+            margin-top: 35px;
+        }
+    }
+    p {
+        a {
+            color: var(--primaryColor);
+
+            &:hover {
+                color: var(--secondaryColor);
+            }
+        }
+    }
+    ul, ol {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            top: 25px;
+            bottom: 0;
+        };
+        li {
+            color: #000000;
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 15px;
+            font: {
+                family: var(--headingFontFamily);
+                weight: 500;
+                size: 15px;
+            };
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &::before {
+                left: 0;
+                top: 50%;
+                content: "\f28b";
+                margin-top: -.5px;
+                position: absolute;
+                transform: translateY(-50%);
+                font: {
+                    family: Phosphor;
+                    size: 20px;
+                };
+            }
+        }
+        &.expertise {
+            max-width: 580px;
+            margin-bottom: -15px;
+
+            li {
+                display: inline-block;
+                margin: {
+                    bottom: 15px !important;
+                    right: 40px !important;
+                };
+            }
+        }
+    }
+    strong {
+        color: var(--blackColor) !important;
+    }
+    .review-comments {
+        .user-review {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 0 0 20px 110px;
+            border-bottom: 1px solid #eeeeee;
+    
+            img {
+                top: 0;
+                left: 0;
+                width: 90px;
+                height: 90px;
+                border-radius: 5px;
+                position: absolute;
+            }
+            .sub-name {
+                margin-bottom: 5px;
+                font: {
+                    family: var(--headingFontFamily);
+                    weight: 600;
+                    size: 17px;
+                };
+            }
+            .review-rating {
+                display: block;
+                margin-bottom: 9px;
+    
+                .review-stars {
+                    i {
+                        line-height: 1;
+                        font-size: 16px;
+                        color: #cecfd2;
+                        margin-right: 5px;
+                        display: inline-block;
+        
+                        &.checked {
+                            color: #ffc107;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .review-form {
+        margin-top: 30px;
+
+        h3 {
+            padding-bottom: 0;
+            border-bottom: none;
+            margin-bottom: 10px;
+        }
+        .comment-notes {
+            span {
+                color: red;
+            }
+        }
+        form {
+            margin-top: 20px;
+
+            .form-group {
+                margin-bottom: 25px;
+                text-align: start;
+                
+                .form-control {
+                    height: 55px;
+                    border: none;
+                    box-shadow: unset;
+                    line-height: 55px;
+                    border-radius: 5px;
+                    color: var(--blackColor);
+                    font-size: var(--fontSize);
+                    background-color: #f9f9f9;
+                    font: {
+                        size: var(--fontSize);
+                        weight: 500;
+                    };
+                    padding: {
+                        top: 0;
+                        left: 20px;
+                        right: 20px;
+                        bottom: 2px;
+                    };
+                    &::placeholder {
+                        color: var(--paragraphColor);
+                        transition: var(--transition);
+                    }
+                    &:focus {
+                        &::placeholder {
+                            color: transparent;
+                        }
+                    }
+                }
+                textarea.form-control {
+                    height: auto;
+                    padding-top: 20px;
+                    line-height: unset;
+                }
+            }
+            .rating {
+                text-align: start;
+                overflow: hidden;
+                max-width: 115px;
+                margin: {
+                    top: -5px;
+                    bottom: 25px;
+                };
+                label {
+                    width: 23px;
+                    height: 23px;
+                    float: right;
+                    cursor: pointer;
+                    position: relative;
+
+                    &:not(:first-of-type) {
+                        padding-right: 5px;
+                    }
+                    &:before {
+                        transition: var(--transition);
+                        content: "\2605";
+                        color: #cccccc;
+                        font-size: 27px;
+                        line-height: 1;
+                    }
+                }
+                input {
+                    display: none;
+                }
+                input:checked ~ label:before, &:not(:checked) > label:hover:before, &:not(:checked) > label:hover ~ label:before {
+                    color: #f6b500;
+                }
+            }
+            .form-check {
+                cursor: pointer;
+                margin-bottom: 0;
+                color: var(--blackColor);
+    
+                a {
+                    color: var(--primaryColor);
+        
+                    &:hover {
+                        color: var(--secondaryColor);
+                    }
+                }
+                .form-check-input {
+                    margin-top: .24em;
+                    box-shadow: unset !important;
+    
+                    &[type=checkbox] {
+                        border-radius: 0;
+                    }
+                    &:checked {
+                        background-color: var(--primaryColor);
+                        border-color: var(--primaryColor);
+                    }
+                    &:focus {
+                        border-color: var(--primaryColor);
+                    }
+                }
+                .form-check-label {
+                    cursor: pointer;
+                }
+            }
+            .default-btn {
+                margin-top: 25px;
+            }
+        }
+    }
+}
+.profile-sidebar {
+    padding-left: 35px;
+    position: relative;
+    margin-top: -210px;
+
+    .single-doctor-box {
+        margin-bottom: 0;
+
+        .content {
+            p {
+                margin-bottom: 15px;
+            }
+            .status {
+                color: var(--paragraphColor);
+                background-color: #f5f5f5;
+                text-transform: uppercase;
+                display: inline-block;
+                border-radius: 5px;
+                padding: 6px 18px;
+                margin-top: 5px;
+                font: {
+                    size: 15px;
+                    weight: 700;
+                };
+            }
+            .rating {
+                margin-top: 25px;
+
+                .star {
+                    line-height: .01;
+
+                    i {
+                        line-height: .01;
+                        color: #cccccc;
+                        margin-right: 4px;
+                        font-size: 18px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &.checked {
+                            color: #ffc107;
+                        }
+                    }
+                }
+                span {
+                    color: var(--blackColor);
+                    display: inline-block;
+                    margin-left: 7px;
+                    font: {
+                        size: var(--fontSize);
+                        weight: 600;
+                    };
+                    &:nth-child(3) {
+                        color: var(--secondaryColor);
+                    }
+                }
+            }
+            .default-btn {
+                padding-right: 65px;
+                text-align: start;
+                margin-top: 25px;
+                display: block;
+                width: 100%;
+            }
+            .social {
+                margin-top: 25px;
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .doctor-profile-area {
+        padding-top: 0;
+
+        .col-lg-8 {
+            order: 2;
+        }
+        .col-lg-4 {
+            order: 1;
+        }
+    }
+    .profile-description {
+        h3 {
+            font-size: 17px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+        ol, ul {
+            margin-top: 20px;
+
+            li {
+                padding-left: 28px;
+                font-size: 13px;
+            }
+            &.expertise {
+                max-width: 100%;
+
+                li {
+                    display: block;
+                    margin-right: 0 !important;
+                }
+            }
+        }
+        .review-comments {
+            .user-review {
+                margin-bottom: 15px;
+                padding: 0 0 15px 0;
+
+                img {
+                    width: 90px;
+                    height: 90px;
+                    position: relative;
+                    margin-bottom: 15px;
+                }
+                .review-stars {
+                    i {
+                        font-size: 15px;
+                    }
+                }
+                .sub-name {
+                    font-size: 14px;
+                }
+            }
+        }
+        .review-form {
+            form {
+                .form-group {
+                    margin-bottom: 20px;
+
+                    .form-control {
+                        height: 50px;
+                        font-size: 14px;
+                        line-height: 50px;
+                        padding: {
+                            left: 15px;
+                            right: 15px;
+                        };
+                    }
+                }
+                .form-check {
+                    .form-check-input {
+                        margin-top: 0.3em;
+                    }
+                }
+                .default-btn {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    .profile-sidebar {
+        padding-left: 0;
+        margin: {
+            top: -60px;
+            bottom: 40px;
+        };
+        .single-doctor-box {
+            .content {
+                .rating {
+                    margin-top: 20px;
+                    display: block !important;
+
+                    .star {
+                        margin-bottom: 10px;
+
+                        i {
+                            font-size: 15px;
+                        }
+                    }
+                    span {
+                        display: inline-block;
+                        font-size: 14px;
+                        margin: {
+                            left: 0;
+                            right: 5px;
+                        };
+                    }
+                }
+                .status {
+                    padding: 5px 15px;
+                    font-size: 13px;
+                    margin-top: 0;
+                }
+                .social {
+                    margin-top: 20px;
+                }
+                .default-btn {
+                    margin-top: 20px;
+                    padding-right: 60px;
+
+                    &.style-two {
+                        padding-left: 43px;
+
+                        i {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .doctor-profile-area {
+        padding-top: 0;
+
+        .col-lg-4 {
+            order: 1;
+        }
+        .col-lg-8 {
+            order: 2;
+        }
+    }
+    .profile-description {
+        h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        ol, ul {
+            li {
+                font-size: 14px;
+            }
+        }
+        .review-comments {
+            .user-review {
+                .review-rating {
+                    .review-stars {
+                        i {
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .sub-name {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .profile-sidebar {
+        padding-left: 0;
+        margin: {
+            top: -100px;
+            bottom: 40px;
+        };
+        .single-doctor-box {
+            .image {
+                .icon {
+                    right: 40px;
+                    bottom: 45px;
+                }
+            }
+            .content {
+                padding: 35px;
+
+                .rating {
+                    .star {
+                        i {
+                            font-size: 15px;
+                        }
+                    }
+                    span {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .profile-sidebar {
+        padding-left: 0;
+        margin-top: -220px;
+
+        .single-doctor-box {
+            .image {
+                .icon {
+                    right: 30px;
+                    bottom: 0;
+                }
+            }
+            .content {
+                padding: 25px 20px;
+
+                .rating {
+                    .star {
+                        i {
+                            font-size: 15px;
+                        }
+                    }
+                    span {
+                        margin-left: 4px;
+                        font-size: 14px;
+                    }
+                }
+                .status {
+                    font-size: 14px;
+                }
+                .default-btn {
+                    &.style-two {
+                        padding-left: 14px;
+                        font-size: 15px;
+
+                        i {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .profile-sidebar {
+        padding-left: 0;
+
+        .single-doctor-box {
+            .content {
+                padding: 30px;
+
+                .rating {
+                    span {
+                        font-size: 15px;
+                    }
+                }
+                .default-btn {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}
