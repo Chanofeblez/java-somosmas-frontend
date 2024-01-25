@@ -1,0 +1,38 @@
+<div
+    class="top-header-area"
+    [ngClass]="{'bg-color': router.url === '/index-2'}"
+>
+    <div class="container-fluid" *ngIf="topHeaderData">
+        <div class="row align-items-center">
+            <div class="col-xl-8 col-lg-6 col-md-12">
+                <ul class="top-header-contact-info">
+                    <li>
+                        <i class="flaticon-map-location"></i>
+                        {{topHeaderData.location}}
+                    </li>
+                    <li>
+                        <i class="flaticon-time-left"></i>
+                        {{topHeaderData.officeHours}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-12">
+                <ul class="top-header-right-side">
+                    <li>
+                        <i class="flaticon-call"></i>
+                        <a href="tel:{{topHeaderData.phoneNumber}}">{{topHeaderData.phoneNumber}}</a>
+                    </li>
+                    <li>
+                        <ul class="social">
+                            <li *ngFor="let item of topHeaderData.socials;">
+                                <a href="{{item.link}}" target="_blank">
+                                    <i class="{{item.icon}}"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

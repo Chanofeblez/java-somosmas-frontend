@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_testimonial_boxes",
+  "info": {
+    "displayName": "box",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "feedback": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    }
+  }
+}

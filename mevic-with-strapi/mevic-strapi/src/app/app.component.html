@@ -1,0 +1,6 @@
+<app-top-header [ngClass]="{'d-none': router.url === '/index-3' || router.url === '/thank-you' || router.url === '/coming-soon'}"></app-top-header>
+<app-navbar [ngClass]="{'d-none': router.url === '/thank-you' || router.url === '/coming-soon'}"></app-navbar>
+<router-outlet></router-outlet>
+<app-subscribe [ngClass]="{'d-none': router.url === '/thank-you' || router.url === '/coming-soon'}"></app-subscribe>
+<app-footer [ngClass]="{'d-none': router.url === '/thank-you' || router.url === '/coming-soon'}"></app-footer>
+<ngx-scrolltop [ngClass]="{'d-none': router.url === '/thank-you' || router.url === '/coming-soon'}"></ngx-scrolltop>

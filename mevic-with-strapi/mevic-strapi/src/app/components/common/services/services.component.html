@@ -1,0 +1,70 @@
+<!-- Default Services Section -->
+<div
+    class="services-area pt-100 pb-75 bg-d9eff9"
+    [ngClass]="{'d-none': router.url === '/index-2'}"
+>
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">POPULAR SERVICES</span>
+            <h2>Give us a chance to prove that we care</h2>
+        </div>
+        <div class="row justify-content-center" *ngIf="servicesData">
+            <div class="col-lg-4 col-md-6" *ngFor="let content of servicesData.slice(0, 6);">
+                <div class="single-services-box">
+                    <div class="icon">
+                        <i class="{{content.attributes.icon}}"></i>
+                    </div>
+                    <h3>
+                        <a [routerLink]="['/service', content.attributes.slug]">
+                            {{content.attributes.title}}
+                        </a>
+                    </h3>
+                    <p>{{content.attributes.shortDesc}}</p>
+                    <a
+                        [routerLink]="['/service', content.attributes.slug]"
+                        class="link-btn"
+                    >
+                        Read More <i class="ph-caret-right"></i>
+                    </a>
+                    <div class="back-icon">
+                        <i class="{{content.attributes.icon}}"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Services Section For Home Demo - 2 -->
+<div
+    class="services-area pt-100 pb-75 bg-d9eff9 d-none"
+    [ngClass]="{'d-block': router.url === '/index-2'}"
+>
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">POPULAR SERVICES</span>
+            <h2>Give us a chance to prove that we care</h2>
+        </div>
+        <div class="row justify-content-center" *ngIf="servicesData">
+            <div class="col-lg-4 col-md-6" *ngFor="let content of servicesData.slice(0, 6);">
+                <div class="services-box">
+                    <div class="icon">
+                        <i class="{{content.attributes.icon}}"></i>
+                    </div>
+                    <h3>
+                        <a [routerLink]="['/service', content.attributes.slug]">
+                            {{content.attributes.title}}
+                        </a>
+                    </h3>
+                    <p>{{content.attributes.shortDesc}}</p>
+                    <a
+                        [routerLink]="['/service', content.attributes.slug]"
+                        class="link-btn"
+                    >
+                        Read More <i class="ph-caret-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

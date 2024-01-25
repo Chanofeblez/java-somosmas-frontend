@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "sidebar_modals",
+  "info": {
+    "singularName": "sidebar-modal",
+    "pluralName": "sidebar-modals",
+    "displayName": "Sidebar Modal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "officeHours": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social.item"
+    }
+  }
+}

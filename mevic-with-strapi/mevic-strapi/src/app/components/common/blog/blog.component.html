@@ -1,0 +1,34 @@
+<div class="blog-area pt-100 pb-75">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">LATEST NEWS</span>
+            <h2>Our latest insights are on top all times</h2>
+        </div>
+        <div class="row justify-content-center" *ngIf="blogData">
+            <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let content of blogData.slice(0, 3)">
+                <div class="single-blog-post">
+                    <a [routerLink]="['/blog', content.attributes.slug]" class="image d-block">
+                        <img [src]="content.attributes.image.data.attributes.url" alt="blog-image">
+                    </a>
+                    <div class="content">
+                        <ul class="meta">
+                            <li>
+                                <img src="assets/img/tag.svg" alt="tag">
+                                {{content.attributes.tag}}
+                            </li>
+                            <li>
+                                <img src="assets/img/calendar.svg" alt="tag">
+                                {{content.attributes.updatedAt | date}}
+                            </li>
+                        </ul>
+                        <h3>
+                            <a [routerLink]="['/blog', content.attributes.slug]">
+                                {{content.attributes.title}}
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_demo_one_banners",
+  "info": {
+    "singularName": "home-demo-one-banner",
+    "pluralName": "home-demo-one-banners",
+    "displayName": "Home Demo One Banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "banner-slide.slide"
+    }
+  }
+}

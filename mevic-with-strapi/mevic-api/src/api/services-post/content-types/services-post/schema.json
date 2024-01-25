@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services_posts",
+  "info": {
+    "singularName": "services-post",
+    "pluralName": "services-posts",
+    "displayName": "Services Posts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "shortDesc": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

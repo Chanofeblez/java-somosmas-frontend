@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_demo_two_banners",
+  "info": {
+    "singularName": "home-demo-two-banner",
+    "pluralName": "home-demo-two-banners",
+    "displayName": "Home Demo Two Banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "banner-slide.slide"
+    },
+    "listItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "banner-slide.list-item"
+    }
+  }
+}

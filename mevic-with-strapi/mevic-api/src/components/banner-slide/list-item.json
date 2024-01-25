@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_banner_slide_list_items",
+  "info": {
+    "displayName": "listItem",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

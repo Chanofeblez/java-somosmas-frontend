@@ -1,0 +1,178 @@
+<!-- Navbar -->
+<div
+    class="navbar-area"
+    stickyClass="sticky-box-shadow"
+    ngStickyNav
+    [ngClass]="{'p-absolute': router.url === '/index-3'}"
+>
+    <div class="container-fluid" *ngIf="navbarData">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" [class.active]="classApplied">
+            <a
+                class="navbar-brand"
+                routerLink="/"
+                [ngClass]="{'d-none': router.url === '/index-3'}"
+            >
+                <img [src]="navbarData.logo.data.attributes.url" alt="logo">
+            </a>
+            <a
+                class="navbar-brand d-none"
+                routerLink="/"
+                [ngClass]="{'d-inline': router.url === '/index-3'}"
+            >
+                <img [src]="navbarData.whiteLogo.data.attributes.url" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" (click)="toggleClass()">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item" *ngFor="let menuItem of navbarData.menuList;">
+                        <a 
+                            routerLink="{{menuItem.menuLink}}" 
+                            [class]="menuItem.dropdowns?.length > 0 ? 'nav-link dropdown-toggle' : 'nav-link'" 
+                            routerLinkActive="active" 
+                            [routerLinkActiveOptions]="{exact: true}"
+                        >
+                            {{menuItem.menuName}}
+                        </a>
+                        <ng-container *ngIf="menuItem.dropdowns?.length > 0">
+                            <ul class="dropdown-menu">
+                                <li 
+                                    class="nav-item" 
+                                    *ngFor="let dropdownMenuItem of menuItem.dropdowns"
+                                >
+                                    <a 
+                                        routerLink="{{dropdownMenuItem.menuLink}}" 
+                                        routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}" 
+                                        class="nav-link"
+                                    >
+                                        {{dropdownMenuItem.menuName}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </ng-container>
+                    </li>
+                </ul>
+                <ul class="navbar-nav for-responsive"><!-- for responsive -->
+                    <li class="nav-item" *ngFor="let menuItem of navbarData.menuList;">
+                        <a 
+                            routerLink="{{menuItem.menuLink}}" 
+                            [class]="menuItem.dropdowns?.length > 0 ? 'nav-link dropdown-toggle' : 'nav-link'" 
+                            routerLinkActive="active" 
+                            [routerLinkActiveOptions]="{exact: true}"
+                            (click)="toggleClass()"
+                        >
+                            {{menuItem.menuName}}
+                        </a>
+                        <ng-container *ngIf="menuItem.dropdowns?.length > 0">
+                            <ul class="dropdown-menu">
+                                <li 
+                                    class="nav-item" 
+                                    *ngFor="let dropdownMenuItem of menuItem.dropdowns"
+                                >
+                                    <a 
+                                        routerLink="{{dropdownMenuItem.menuLink}}" 
+                                        routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}" 
+                                        class="nav-link"
+                                        (click)="toggleClass()"
+                                    >
+                                        {{dropdownMenuItem.menuName}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </ng-container>
+                    </li>
+                </ul>
+                <div class="others-option d-flex align-items-center">
+                    <div class="search-icon" (click)="searchToggleClass()">
+                        <i class='flaticon-search-interface-symbol'></i>
+                    </div>
+                    <div>
+                        <button type="button" (click)="switcherToggleClass()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Search Overlay -->
+<div class="search-overlay" [class.search-overlay-active]="searchClassApplied">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-close" (click)="searchToggleClass()">
+                <span class="search-overlay-close-line"></span>
+                <span class="search-overlay-close-line"></span>
+            </div>
+            <div class="search-overlay-form">
+                <form>
+                    <input type="text" class="input-search" placeholder="Enter your keywords...">
+                    <button type="submit"><i class='flaticon-search-interface-symbol'></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="sidebarModal" [class.active]="switcherClassApplied">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" (click)="switcherToggleClass()">
+                <i class='flaticon-cancel'></i>
+            </button>
+            <div class="modal-body" *ngIf="sidebarModalData">
+                <div class="logo">
+                    <a routerLink="/" class="d-inline-block">
+                        <img [src]="sidebarModalData.logo.data.attributes.url" alt="image">
+                    </a>
+                </div>
+                <ul class="sidebar-contact-info">
+                    <li>
+                        <i class="ph-phone-call"></i>
+                        <span>{{sidebarModalData.officeHours}}</span>
+                        <a href="tel:{{sidebarModalData.phoneNumber}}">{{sidebarModalData.phoneNumber}}</a>
+                    </li>
+                    <li>
+                        <i class="ph-envelope-simple-open"></i>
+                        <span>Do You Have a Question?</span>
+                        <a href="mailto:{{sidebarModalData.email}}">{{sidebarModalData.email}}</a>
+                    </li>
+                    <li>
+                        <i class="ph-map-pin"></i>
+                        <span>{{sidebarModalData.location}}</span>
+                        <a href="https://maps.google.com/" target="_blank">Find Us on Map</a>
+                    </li>
+                </ul>
+                <ul class="social-links">
+                    <li *ngFor="let item of sidebarModalData.socials;">
+                        <a href="{{item.link}}" target="_blank">
+                            <i class="{{item.icon}}"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="box">
+                    <p>Latest resources, sent to your inbox weekly</p>
+                    <form class="newsletter-form">
+                        <input type="text" class="input-newsletter" placeholder="Enter your email address">
+                        <button type="submit" class="default-btn style-two">
+                            <i class="flaticon-calendar-1"></i>
+                            Book Appointment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

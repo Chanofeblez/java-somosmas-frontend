@@ -1,0 +1,31 @@
+<div class="why-choose-us-area ptb-100" *ngIf="whyChooseUsData">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="why-choose-us-content">
+                    <span class="sub-title">{{whyChooseUsData.subTitle}}</span>
+                    <h2>{{whyChooseUsData.title}}</h2>
+                    <p>{{whyChooseUsData.paragraph}}</p>
+                    <ul class="list">
+                        <li *ngFor="let item of whyChooseUsData.featuresList;">
+                            <span>
+                                <i class="flaticon-check-mark"></i>
+                                {{item.title}}
+                            </span>
+                        </li>
+                    </ul>
+                    <p>{{whyChooseUsData.subParagraph}}</p>
+                    <a routerLink="{{whyChooseUsData.buttonLink}}" class="default-btn style-two">
+                        <i class="flaticon-calendar-1"></i>
+                        {{whyChooseUsData.buttonText}}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="why-choose-us-image">
+                    <img [src]="whyChooseUsData.image.data.attributes.url" alt="why-choose-us-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

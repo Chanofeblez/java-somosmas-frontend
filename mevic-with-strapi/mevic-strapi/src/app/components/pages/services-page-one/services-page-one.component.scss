@@ -1,0 +1,13 @@
+@import "../../common/services/services.component.scss";
+
+.single-services-box {
+    background-color: #f9f9f9;
+    box-shadow: unset !important;
+
+    &::before { 
+        display: none;
+    }
+    .back-icon {
+        opacity: 0.04;
+    }
+}

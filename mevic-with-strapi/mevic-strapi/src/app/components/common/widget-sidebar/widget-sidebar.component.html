@@ -1,0 +1,70 @@
+<div class="widget widget_search">
+    <h3 class="widget-title">
+        Search
+    </h3>
+    <form class="search-form">
+        <input type="search" class="search-field" placeholder="Search...">
+        <button type="submit"><i class="ph-magnifying-glass"></i></button>
+    </form>
+</div>
+<div class="widget widget_categories">
+    <h3 class="widget-title">
+        Categories
+    </h3>
+    <ul>
+        <li><a routerLink="/blog-categories">Business <span class="count">(6)</span></a></li>
+        <li><a routerLink="/blog-categories">Privacy <span class="count">(4)</span></a></li>
+        <li><a routerLink="/blog-categories">Technology <span class="count">(5)</span></a></li>
+        <li><a routerLink="/blog-categories">Tips <span class="count">(3)</span></a></li>
+        <li><a routerLink="/blog-categories">Log in <span class="count">(8)</span></a></li>
+        <li><a routerLink="/blog-categories">Uncategorized <span class="count">(1)</span></a></li>
+    </ul>
+</div>
+<div class="widget widget_mevic_posts_thumb" *ngIf="blogData">
+    <h3 class="widget-title">
+        Popular Posts
+    </h3>
+    <article class="item" *ngFor="let content of blogData.slice(0, 4)">
+        <a
+            [routerLink]="['/blog', content.attributes.slug]"
+            class="thumb"
+        >
+            <img [src]="content.attributes.image.data.attributes.url" alt="blog-image">
+        </a>
+        <div class="info">
+            <h4 class="title">
+                <a [routerLink]="['/blog', content.attributes.slug]">
+                    {{content.attributes.title}}
+                </a>
+            </h4>
+            <span class="date">{{content.attributes.updatedAt | date}}</span>
+        </div>
+    </article>
+</div>
+<div class="widget widget_follow_us">
+    <h3 class="widget-title">
+        Follow Us
+    </h3>
+    <ul>
+        <li><a href="https://facebook.com/" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.pinterest.com/" target="_blank">Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank">Linkedin</a></li>
+    </ul>
+</div>
+<div class="widget widget_tag_cloud">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="tagcloud">
+        <a routerLink="/blog-tag">Advertisment</a>
+        <a routerLink="/blog-tag">Business</a>
+        <a routerLink="/blog-tag">Life</a>
+        <a routerLink="/blog-tag">Lifestyle</a>
+        <a routerLink="/blog-tag">Fashion</a>
+        <a routerLink="/blog-tag">Ads</a>
+        <a routerLink="/blog-tag">Advertisment</a>
+        <a routerLink="/blog-tag">Business</a>
+    </div>
+</div>

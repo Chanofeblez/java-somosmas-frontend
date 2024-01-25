@@ -1,0 +1,27 @@
+<div class="subscribe-area" *ngIf="subscribeData">
+    <div class="container">
+        <div class="subscribe-inner extra-mb">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-12">
+                    <div class="image">
+                        <img [src]="subscribeData.image.data.attributes.url" alt="subscribe-image">
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12">
+                    <div class="content">
+                        <span class="sub-title">{{subscribeData.subTitle}}</span>
+                        <h2>{{subscribeData.title}}</h2>
+                        <form class="newsletter-form">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <input type="text" class="input-newsletter" placeholder="Enter your email address" name="EMAIL" required autocomplete="off">
+                                <button type="submit" class="default-btn">
+                                    Subscribe Now
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

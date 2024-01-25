@@ -1,0 +1,39 @@
+<div class="services-area ptb-100 bg-d9eff9">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">POPULAR SERVICES</span>
+            <h2>Give us a chance to prove that we care</h2>
+        </div>
+        <div class="services-tabs" *ngIf="departmentsData">
+            <ngx-tabset>
+                <ngx-tab tabTitle="{{content.attributes.title}}" *ngFor="let content of departmentsData;">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="content">
+                                <h3>
+                                    <a [routerLink]="['/department', content.attributes.slug]">
+                                        {{content.attributes.title}}
+                                    </a>
+                                </h3>
+                                <div markdown ngPreserveWhitespaces>
+                                    {{content.attributes.shortDesc}}
+                                </div>
+                                <a
+                                    [routerLink]="['/department', content.attributes.slug]"
+                                    class="default-btn"
+                                >
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="image">
+                                <img [src]="content.attributes.image.data.attributes.url" alt="services-image">
+                            </div>
+                        </div>
+                    </div>
+                </ngx-tab>
+            </ngx-tabset>
+        </div>
+    </div>
+</div>

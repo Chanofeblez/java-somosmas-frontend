@@ -1,0 +1,14 @@
+<div class="partner-area pb-75" *ngIf="partnerData">
+    <div class="container">
+        <div class="section-title">
+            <h2>{{partnerData.title}}</h2>
+        </div>
+        <div class="customers-partners-list row justify-content-center">
+            <div class="partner-item" *ngFor="let item of partnerData.images.data;">
+                <div class="inner">
+                    <img [src]="item.attributes.url" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

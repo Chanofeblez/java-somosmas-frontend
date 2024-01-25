@@ -1,0 +1,50 @@
+<div class="doctors-area style-two pt-100 pb-75 bg-1a1e42">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">OUR EXPERTS</span>
+            <h2>Meet our experienced doctors for best treatment</h2>
+        </div>
+        <div class="row justify-content-center" *ngIf="doctorsData">
+            <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let content of doctorsData.slice(0, 3)">
+                <div class="single-doctor-box">
+                    <div class="image">
+                        <img [src]="content.attributes.image.data.attributes.url" alt="doctor-image">
+                        <div class="icon">
+                            <i class="{{content.attributes.icon}}"></i>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>
+                            <a [routerLink]="['/doctor-profile', content.attributes.slug]">
+                                {{content.attributes.name}}
+                            </a>
+                        </h3>
+                        <span class="designation">{{content.attributes.designation}}</span>
+                        <p>{{content.attributes.shortDesc}}</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <ul class="social">
+                                <li *ngFor="let item of content.attributes.socials;">
+                                    <a href="{{item.link}}" target="_blank">
+                                        <i class="{{item.icon}}"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a
+                                [routerLink]="['/doctor-profile', content.attributes.slug]"
+                                class="link-btn"
+                            >
+                                View Profile <i class="ph-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape1">
+        <img src="assets/img/shape/shape1.png" alt="shape">
+    </div>
+    <div class="shape2">
+        <img src="assets/img/shape/shape2.png" alt="shape">
+    </div>
+</div>

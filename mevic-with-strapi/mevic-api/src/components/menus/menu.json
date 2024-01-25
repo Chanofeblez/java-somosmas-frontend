@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_menus_menus",
+  "info": {
+    "displayName": "menu",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "menuName": {
+      "type": "string"
+    },
+    "menuLink": {
+      "type": "string"
+    },
+    "dropdowns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menus.dropdown"
+    }
+  }
+}

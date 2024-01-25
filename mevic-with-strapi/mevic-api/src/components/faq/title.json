@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_faq_titles",
+  "info": {
+    "displayName": "title",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "questionAnswer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.accordion"
+    }
+  }
+}

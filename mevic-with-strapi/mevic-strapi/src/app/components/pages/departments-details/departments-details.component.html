@@ -1,0 +1,132 @@
+<div *ngIf="departmentData">
+    <div *ngFor="let content of departmentData.data;">
+
+        <!-- Page Title Area -->
+        <div class="page-title-area">
+            <div class="container">
+                <div class="page-title-content">
+                    <ul>
+                        <li>
+                            <a routerLink="/">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            Department
+                        </li>
+                        <li>
+                            {{content.attributes.title}}
+                        </li>
+                    </ul>
+                    <h1>{{content.attributes.title}}</h1>
+                </div>
+            </div>
+            <div class="shape5 animate__animated animate__fadeInDown">
+                <img src="assets/img/shape/shape5.png" alt="shape">
+            </div>
+            <div class="shape6 animate__animated animate__fadeInUp">
+                <img src="assets/img/shape/shape6.png" alt="shape">
+            </div>
+        </div>
+
+        <!-- Services Details Area -->
+        <div class="services-details-area ptb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                        <div class="services-details-desc">
+                            <div class="image">
+                                <img [src]="content.attributes.image.data.attributes.url" alt="services-image">
+                            </div>
+                            <div class="desc">
+                                <div markdown ngPreserveWhitespaces>
+                                    {{content.attributes.description}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="services-sidebar">
+                            <ul class="services-list">
+                                <li>
+                                    {{content.attributes.title}}
+                                    <p>{{content.attributes.shortDesc}}</p>
+                                </li>
+                            </ul>
+                            <div class="quote-info-box">
+                                <div class="info-item">
+                                    <div class="rating">
+                                        <i class="flaticon-star-2"></i>
+                                        <i class="flaticon-star-2"></i>
+                                        <i class="flaticon-star-2"></i>
+                                        <i class="flaticon-star-2"></i>
+                                        <i class="flaticon-star-2"></i>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ut arcu a dignissim suscipit non ac eget tellus in nisl mauris nec</p>
+                                </div>
+                                <div class="info d-flex align-items-center">
+                                    <img src="assets/img/user/user1.jpg" alt="user">
+                                    <div class="title">
+                                        <h3>Kathrym Cooper</h3>
+                                        <span>CEO & Founder</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="opening-hours-info">
+                                <h3>Working Hours</h3>
+                                <p>Have an emergency? Book your visit.</p>
+                                <ul class="opening-hours">
+                                    <li>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Saturday - Sunday</span>
+                                            <span>08:00AM - 04:00PM</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Monday</span>
+                                            <span>08:00AM - 04:00PM</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Tuesday</span>
+                                            <span>08:00AM - 04:00PM</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Wednesday</span>
+                                            <span>08:00AM - 04:00PM</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Thursday - Friday</span>
+                                            <span>08:00AM - 04:00PM</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="box">
+                                    <h6>Emergency Support</h6>
+                                    <a href="tel:+1-485-456-0102" class="d-flex align-items-center">
+                                        <i class="flaticon-call"></i>
+                                        +1-485-456-0102
+                                    </a>
+                                </div>
+                                <div class="box">
+                                    <h6>Book an Appointment</h6>
+                                    <a routerLink="/book-appointment" class="d-flex align-items-center">
+                                        <i class="flaticon-calendar"></i>
+                                        Book Here
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

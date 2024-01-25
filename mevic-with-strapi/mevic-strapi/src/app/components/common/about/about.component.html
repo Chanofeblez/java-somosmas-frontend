@@ -1,0 +1,45 @@
+<div
+    class="about-area pt-100"
+    [ngClass]="{'pt-0': router.url === '/index-3'}"
+>
+    <div class="container" *ngIf="aboutData">
+        <div class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="about-image">
+                    <img [src]="aboutData.mainImage.data.attributes.url" alt="about-image">
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="about-content">
+                    <span class="sub-title">{{aboutData.subTitle}}</span>
+                    <h2>{{aboutData.title}}</h2>
+                    <ul class="list">
+                        <li *ngFor="let item of aboutData.featuresList;">
+                            <span>
+                                <i class="flaticon-check-mark"></i>
+                                {{item.title}}
+                            </span>
+                        </li>
+                    </ul>
+                    <p>{{aboutData.paragraph}}</p>
+                    <div class="ceo-info d-flex align-items-center">
+                        <div class="signature">
+                            <img [src]="aboutData.signature.data.attributes.url" alt="signature">
+                        </div>
+                        <div class="info d-flex align-items-center">
+                            <img [src]="aboutData.ceoImage.data.attributes.url" alt="ceo">
+                            <div class="title">
+                                <h4>{{aboutData.name}}</h4>
+                                <span>{{aboutData.designation}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a routerLink="{{aboutData.buttonLink}}" class="default-btn style-two">
+                        <i class="flaticon-calendar-1"></i>
+                        {{aboutData.buttonText}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="banner-main-area" *ngIf="bannerData">
+    <div class="banner-slides">
+        <owl-carousel-o [options]="bannerSlides">
+            <ng-template carouselSlide *ngFor="let content of bannerData.slides;">
+                <div class="banner-area">
+                    <div class="bg-image" style="background-image: url({{content.bgImage.data.attributes.url}});"></div>
+                    <div class="container-fluid">
+                        <div class="banner-content">
+                            <span class="sub-title">{{content.subTitle}}</span>
+                            <h1>{{content.title}}</h1>
+                            <p>{{content.paragraph}}</p>
+                            <div class="btn-box">
+                                <a routerLink="{{content.buttonLink}}" class="default-btn">{{content.buttonText}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+    <div class="banner-owl-thumbs animate__animated animate__fadeInUp">
+        <div class="owl-thumbs">
+            <div class="owl-thumb-item" *ngFor="let content of bannerData.listItems.slice(0, 5);">
+                <div class="item">
+                    <span>{{content.title}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "emergency_supports",
+  "info": {
+    "singularName": "emergency-support",
+    "pluralName": "emergency-supports",
+    "displayName": "Emergency Support",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "linkText": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

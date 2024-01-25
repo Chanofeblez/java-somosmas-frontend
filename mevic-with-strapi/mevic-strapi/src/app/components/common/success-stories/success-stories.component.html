@@ -1,0 +1,33 @@
+<div class="stories-area ptb-100 bg-f9f9f9" *ngIf="successStoryData">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">{{successStoryData.subTitle}}</span>
+            <h2>{{successStoryData.sectionTitle}}</h2>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-12">
+                <div class="stories-content">
+                    <div class="icon">
+                        <i class="{{successStoryData.icon}}"></i>
+                    </div>
+                    <h3>{{successStoryData.title}}</h3>
+                    <p>{{successStoryData.paragraph}}</p>
+                    <a routerLink="{{successStoryData.buttonLink}}" class="default-btn">{{successStoryData.buttonText}}</a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="stories-slides">
+                    <owl-carousel-o [options]="storiesSlides">
+                        <ng-template carouselSlide *ngFor="let image of successStoryData.images.data">
+                            <div class="stories-item">
+                                <img [src]="image.attributes.url" alt="stories-image">
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

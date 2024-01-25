@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "book_an_appointments",
+  "info": {
+    "singularName": "book-an-appointment",
+    "pluralName": "book-an-appointments",
+    "displayName": "Book An Appointment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

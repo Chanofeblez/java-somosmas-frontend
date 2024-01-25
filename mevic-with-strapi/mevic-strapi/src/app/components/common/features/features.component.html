@@ -1,0 +1,39 @@
+<!-- Default Features Section -->
+<div
+    class="featured-area pt-100 pb-75"
+    [ngClass]="{'d-none': router.url === '/index-3'}"
+>
+    <div class="container" *ngIf="featuresData">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6" *ngFor="let content of featuresData.boxes;">
+                <div class="single-featured-box">
+                    <div class="icon">
+                        <i class="{{content.icon}}"></i>
+                    </div>
+                    <h3>{{content.title}}</h3>
+                    <p>{{content.paragraph}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section For Home Demo - 3 -->
+<div
+    class="featured-area style-two pb-75 d-none"
+    [ngClass]="{'d-block': router.url === '/index-3'}"
+>
+    <div class="container" *ngIf="featuresData">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6" *ngFor="let content of featuresData.boxes;">
+                <div class="single-featured-item">
+                    <div class="icon">
+                        <i class="{{content.icon}}"></i>
+                    </div>
+                    <h3>{{content.title}}</h3>
+                    <p>{{content.paragraph}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "top_headers",
+  "info": {
+    "singularName": "top-header",
+    "pluralName": "top-headers",
+    "displayName": "Top Header",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "location": {
+      "type": "string"
+    },
+    "officeHours": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social.item"
+    }
+  }
+}

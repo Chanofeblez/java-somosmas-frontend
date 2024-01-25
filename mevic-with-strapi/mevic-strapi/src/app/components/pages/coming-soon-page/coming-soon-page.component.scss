@@ -1,0 +1,198 @@
+.coming-soon-area {
+    height: 100vh;
+    background: {
+        image: url(../../../../assets/img/coming-soon.jpg);
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+}
+.coming-soon-content {
+    background-color: var(--whiteColor);
+    border-radius: 10px;
+    max-width: 650px;
+    padding: 40px;
+    
+    .logo {
+        display: inline-block;
+    }
+    h2 {
+        font-size: 40px;
+        margin: {
+            top: 30px;
+            bottom: 0;
+        };
+    }
+    .coming-soon-countdown {
+        list-style-type: none;
+        padding-left: 0;
+        text-align: start;
+        margin: {
+            top: 35px;
+            bottom: 0;
+        };
+        li {
+            border-radius: 5px;
+            font: {
+                size: var(--fontSize);
+                weight: 600;
+            };
+            margin: {
+                left: 20px;
+                right: 20px;
+            };
+            span {
+                color: var(--primaryColor);
+                font: {
+                    size: 40px;
+                    weight: 800;
+                };
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    form {
+        position: relative;
+        margin-top: 40px;
+
+        .input-newsletter {
+            border: 0;
+            width: 65%;
+            height: 56px;
+            display: block;
+            box-shadow: unset;
+            border-radius: 5px;
+            padding-left: 20px;
+            color: var(--blackColor);
+            background-color: #f9f9f9;
+
+            &::placeholder {
+                color: var(--paragraphColor);
+                transition: var(--transition);
+            }
+            &:focus {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        .default-btn {
+            background-color: var(--blackColor);
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .coming-soon-area {
+        position: relative;
+    }
+    .coming-soon-content {
+        transform: translateY(-50%);
+        position: absolute;
+        max-width: 100%;
+        padding: 20px;
+        right: 15px;
+        left: 15px;
+        top: 50%;
+
+        h2 {
+            font-size: 24px;
+            margin-top: 25px;
+        }
+        .coming-soon-countdown {
+            margin-top: 15px;
+
+            li {
+                font-size: 14px;
+                margin: {
+                    left: 10px;
+                    right: 10px;
+                };
+                span {
+                    font-size: 25px;
+                }
+            }
+        }
+        form {
+            margin-top: 20px;
+
+            .d-flex {
+                display: block !important;
+            }
+            .input-newsletter {
+                width: 100%;
+                height: 50px;
+                font-size: 14px;
+                padding-left: 15px;
+            }
+            .default-btn {
+                right: 0;
+                bottom: 0;
+                margin-top: 15px;
+                position: relative;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .coming-soon-area {
+        height: auto;
+        padding: {
+            top: 100px;
+            bottom: 100px;
+        };
+    }
+    .coming-soon-content {
+        top: 0;
+        left: 0;
+        right: 0;
+        position: relative;
+        transform: translateY(0);
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .coming-soon-content {
+        max-width: 500px;
+        padding: 30px;
+
+        h2 {
+            font-size: 34px;
+            margin-top: 25px;
+        }
+        .coming-soon-countdown {
+            margin-top: 20px;
+        }
+        form {
+            margin-top: 30px;
+
+            .input-newsletter {
+                width: 60%;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

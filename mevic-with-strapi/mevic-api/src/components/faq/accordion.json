@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_faq_accordions",
+  "info": {
+    "displayName": "accordion",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "richtext"
+    }
+  }
+}
