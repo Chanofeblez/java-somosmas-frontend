@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { EventoForm } from 'src/app/interfaces/evento-form.interfaces';
+import { EventoService } from 'src/app/services/evento.service';
 
 @Component({
     selector: 'app-featured-services',
@@ -8,9 +10,20 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class FeaturedServicesComponent implements OnInit {
 
-    constructor() { }
+	eventos : EventoForm[] = [];
 
-    ngOnInit(): void {}
+    constructor(private eventoService: EventoService) { }
+
+    ngOnInit(): void {
+		this.eventoService.getEventos()
+		 .subscribe( (events:any) => {
+			console.log("Evento Mostrado");
+			console.log(events);
+			this.eventos = events;
+			console.log(this.eventos[0].nombre);
+		 });
+		 
+	}
 
     servicesSlides: OwlOptions = {
 		margin: 25,

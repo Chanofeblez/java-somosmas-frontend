@@ -31,25 +31,29 @@ import { ServicesPageOneComponent } from './components/pages/services-page-one/s
 import { ServicesPageTwoComponent } from './components/pages/services-page-two/services-page-two.component';
 import { TermsConditionsPageComponent } from './components/pages/terms-conditions-page/terms-conditions-page.component';
 import { ThankYouPageComponent } from './components/pages/thank-you-page/thank-you-page.component';
+import { ServicesComponent } from './components/common/services/services.component';
+import { CoordinatorsPageComponent } from './components/pages/coordinators-page/coordinators-page.component';
+import { BoardPageComponent } from './components/pages/board-page/board-page.component';
 
 const routes: Routes = [
     {path: '', component: HomeDemoOneComponent},
     //{path: 'index-2', component: HomeDemoTwoComponent},
     //{path: '', component: HomeDemoThreeComponent},
     {path: 'about', component: AboutPageComponent},
+    {path: 'demostrations', component: ServicesComponent},
     {path: 'services-1', component: ServicesPageOneComponent},
     {path: 'services-2', component: ServicesPageTwoComponent},
     {path: 'services-details', component: ServicesDetailsPageComponent},
     {path: 'departments', component: DepartmentsPageComponent},
     {path: 'doctors', component: DoctorsPageComponent},
-    {path: 'doctor-profile', component: DoctorProfilePageComponent},
+    {path: 'coordinator-profile', component: DoctorProfilePageComponent},
     {path: 'faq', component: FaqPageComponent},
     {path: 'thank-you', component: ThankYouPageComponent},
     {path: 'login', component: LoginPageComponent},
     {path: 'register', component: RegisterPageComponent},
     {path: 'forgot-password', component: ForgotPasswordPageComponent},
-    {path: 'privacy-policy', component: PrivacyPolicyPageComponent},
-    {path: 'terms-conditions', component: TermsConditionsPageComponent},
+    {path: 'mission', component: PrivacyPolicyPageComponent},
+    {path: 'presidential-regulation', component: TermsConditionsPageComponent},
     {path: 'book-appointment', component: BookAnAppointmentPageComponent},
     {path: 'coming-soon', component: ComingSoonPageComponent},
     {path: 'blog-grid', component: BlogGridPageComponent},
@@ -61,6 +65,8 @@ const routes: Routes = [
     {path: 'blog-tag', component: BlogTagPageComponent},
     {path: 'blog-search-result', component: BlogSearchResultPageComponent},
     {path: 'contact', component: ContactPageComponent},
+    {path: 'coordinators', component: CoordinatorsPageComponent},
+    {path: 'boards', component: BoardPageComponent},
     // Here add new pages component
 
     {path: '**', component: NotFoundComponent} // This line will remain down from the whole pages component list

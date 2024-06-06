@@ -63,6 +63,8 @@ import { BlogDetailsNoSidebarPageComponent } from './components/pages/blog-detai
 import { BlogCategoriesPageComponent } from './components/pages/blog-categories-page/blog-categories-page.component';
 import { BlogTagPageComponent } from './components/pages/blog-tag-page/blog-tag-page.component';
 import { BlogSearchResultPageComponent } from './components/pages/blog-search-result-page/blog-search-result-page.component';
+import { CoordinatorsPageComponent } from './components/pages/coordinators-page/coordinators-page.component';
+import { BoardPageComponent } from './components/pages/board-page/board-page.component';
 
 
 
@@ -118,7 +120,9 @@ import { BlogSearchResultPageComponent } from './components/pages/blog-search-re
         BlogDetailsNoSidebarPageComponent,
         BlogCategoriesPageComponent,
         BlogTagPageComponent,
-        BlogSearchResultPageComponent
+        BlogSearchResultPageComponent,
+        CoordinatorsPageComponent,
+        BoardPageComponent
     ],
     imports: [
         BrowserModule,

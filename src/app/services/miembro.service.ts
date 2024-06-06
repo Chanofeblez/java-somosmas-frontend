@@ -23,4 +23,14 @@ export class MiembroService {
 
     return this.http.post(`${ base_url }/miembros/login`, formData);
 }
+
+  getMiembro( formData: Number ){
+
+  //return this.http.get(`${ base_url }/miembros/miembro`, formData);
+}
+
+  getMiembros( ){
+
+  return this.http.get(`${ base_url }/miembros`);
+}
 }

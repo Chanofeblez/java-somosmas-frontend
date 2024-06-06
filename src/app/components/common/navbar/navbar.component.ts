@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegisterForm } from 'src/app/interfaces/register-form.interfaces';
+import { MiembroService } from 'src/app/services/miembro.service';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-navbar',
@@ -8,13 +11,46 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-    loginB:boolean=true;
+    loginB:boolean=true;   
+    idStorage: string | null = localStorage.getItem("id");
+    idFinal:number = -1;
+    user: RegisterForm = {
+        nombre:"",
+        primerApellido:"",
+        segundoApellido:"",
+        email:"",        
+        telefono:"",
+        ciudad:"",
+        pais:""
+    };
+    
 
     constructor(
-        public router: Router
-    ) { }
+        public router: Router,
+        public miembroService: MiembroService
+    ) { 
+        
+     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+
+        if(this.idStorage!==null){   
+            this.idFinal=parseInt(this.idStorage);            
+            this.loginB = false;
+            console.log(this.idFinal);  
+            console.log(this.user); 
+
+            this.user.nombre=localStorage.getItem("nombre") || '';
+            this.user.primerApellido=localStorage.getItem("primerApellido") || '';
+            this.user.segundoApellido=localStorage.getItem("segundoApellido") || '';
+            this.user.email=localStorage.getItem("email") || '';
+            this.user.telefono=localStorage.getItem("nombre") || '';
+            this.user.ciudad=localStorage.getItem("ciudad") || '';
+            this.user.pais=localStorage.getItem("pais") || '';                    
+        }
+    } 
+          
+    
 
     switcherClassApplied = false;
     switcherToggleClass() {
@@ -29,6 +65,11 @@ export class NavbarComponent implements OnInit {
     classApplied = false;
     toggleClass() {
         this.classApplied = !this.classApplied;
+    }
+
+    logout() {
+        localStorage.clear();
+        this.loginB=true;
     }
 
 }

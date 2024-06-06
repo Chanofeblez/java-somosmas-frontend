@@ -30,23 +30,28 @@ export class LoginPageComponent implements OnInit {
   });
 
   constructor(private fb: FormBuilder,
-              private usuarioService: MiembroService) { }
+              private miembroService: MiembroService) { }
 
   ngOnInit(): void {
   }
 
   autenticar(): void {
+    console.log('login');
     this.formSubmitted=true;
     console.log(this.loginForm.value);  
 
-    this.usuarioService.loginMiembro( this.loginForm.value )
+    this.miembroService.loginMiembro( this.loginForm.value )
     .subscribe( (resp:any) => {         
-      console.log('miembro creado')
+      console.log('miembro logueado')
       console.log(resp);
-      console.log(this.loginForm.get('remember')?.value);   
-      this.idString=resp.id.toString();
       
-      localStorage.setItem('id', this.idString); 
+      localStorage.setItem('id', resp.id);
+      localStorage.setItem('nombre', resp.nombre); 
+      localStorage.setItem('primerApellido', resp.primerApellido);  
+      localStorage.setItem('segundoApellido', resp.segundoApellido);  
+      localStorage.setItem('telefono', resp.telefono);
+      localStorage.setItem('ciudad', resp.ciudad);
+      localStorage.setItem('pais', resp.pais);        
       
       if( this.loginForm.get('remember')?.value ){
         localStorage.setItem('email', resp.email);

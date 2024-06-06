@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MiembroService } from 'src/app/services/miembro.service';
+import { RegisterForm } from 'src/app/interfaces/register-form.interfaces';
 
 @Component({
   selector: 'app-register-page',
@@ -13,15 +14,15 @@ export class RegisterPageComponent implements OnInit {
   public formSubmitted = false;
 
   public registerForm: FormGroup = this.fb.group({
-    nombre: ['Julio',[Validators.required]],
-    primerApellido: ['Felbl',[Validators.required, Validators.minLength(2)]],
-    segundoApellido: ['FDEZ',[Validators.required]],
-    email: ['aaaa@bbbc.com',[Validators.required, Validators.email]],
-    password: ['123',[Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
-    password2: ['123',[Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
-    telefono: ['112233',[Validators.required]],
-    ciudad: ['asa',[Validators.required]],
-    pais: ['sas',[Validators.required]],
+    nombre: ['',[Validators.required]],
+    primerApellido: ['',[Validators.required, Validators.minLength(2)]],
+    segundoApellido: ['',[Validators.required]],
+    email: ['',[Validators.required, Validators.email]],
+    password1: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
+    password2: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
+    telefono: ['',[Validators.required]],
+    ciudad: ['',[Validators.required]],
+    pais: ['',[Validators.required]],
     terminos: [true,[Validators.required]],
   }, {
     validator: this.passwordsIguales('password1', 'password2')
@@ -53,8 +54,17 @@ export class RegisterPageComponent implements OnInit {
             timer: 1500
           });
           console.log('miembro creado')
-          console.log(resp);   
-          localStorage.setItem('id', resp.id.toString()) ;        
+          console.log(resp); 
+          localStorage.clear();  
+          localStorage.setItem('id', resp.id.toString());
+          localStorage.setItem('nombre', resp.nombre); 
+          localStorage.setItem('primerApellido', resp.primerApellido);  
+          localStorage.setItem('segundoApellido', resp.segundoApellido);  
+          localStorage.setItem('telefono', resp.telefono);
+          localStorage.setItem('ciudad', resp.ciudad);
+          localStorage.setItem('pais', resp.pais);
+          localStorage.setItem('rol', resp.unRol);   
+          localStorage.setItem('email', resp.email);           
         }, (err) => {
           Swal.fire({
             icon: "error",

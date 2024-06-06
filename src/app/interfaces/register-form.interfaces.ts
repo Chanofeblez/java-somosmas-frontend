@@ -3,10 +3,11 @@ export interface RegisterForm{
     primerApellido: string;
     segundoApellido: string;
     email: string;
-    password: string;
-    password2: string;
+    password?: string;
+    id?: number;
     telefono: string;
     ciudad: string;
     pais: string;
-    terminos:boolean;
+    unRol?: string;
+    terminos?:boolean;
 }
