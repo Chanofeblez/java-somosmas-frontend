@@ -2,11 +2,11 @@
 <div class="page-title-area style-two">
     <div class="container">
         <div class="page-title-content">
-            <h6>Emergency Contact</h6>
-            <a href="tel:+1-485-456-0102" class="d-flex align-items-center">
+            <h2>{{member?.nombre}} {{member?.primerApellido}} {{member?.segundoApellido}}</h2>
+          <!--  <a href="tel:+1-485-456-0102" class="d-flex align-items-center">
                 <i class="flaticon-call"></i>
                 abcd&#64;yahoo.com
-            </a>
+            </a> -->
         </div>
     </div>
     <div class="shape5 animate__animated animate__fadeInDown">
@@ -21,13 +21,13 @@
 <div class="doctor-profile-area pb-100">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-12">
-                <div class="profile-description">
+            <div class="col-lg-7 col-md-12">
+             <!-- <div class="profile-description">
                     <ngx-tabset>
                         <ngx-tab tabTitle="Overview">
-                            <h3>Businessman talking on the mobile phone</h3>
+                            <h3>{{member?.nombre}} {{member?.primerApellido}} {{member?.segundoApellido}}</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae cupiditate, minima similique et error earum repudiandae optio magni sunt ex beatae, exercitationem dolore unde asperiores quas voluptate alias nemo. Voluptate! </p>
-                       <!-- <ul class="expertise">
+                       <ul class="expertise">
                                 <li>Family Medicine</li>
                                 <li>Castle Connolly Top Doctor - 5 Years</li>
                                 <li>Featured in Atlanta Magazine</li>
@@ -49,9 +49,9 @@
                                 <li>UnitedHealthcare - Navigate / Navigate Balanced</li>
                                 <li>UnitedHealthcare - Navigate Plus</li>
                                 <li>UnitedHealthcare - NexusACO RP</li>
-                            </ul> -->
+                            </ul>
                         </ngx-tab>
-                       <!-- <ngx-tab tabTitle="Qualification">
+                       <ngx-tab tabTitle="Qualification">
                             <h3>Qualifications</h3>
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered <a routerLink="/">alteration</a> in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden.</p>
                             <ul>
@@ -174,11 +174,11 @@
                                     </div>
                                 </form>
                             </div>
-                        </ngx-tab> -->
+                        </ngx-tab>
                     </ngx-tabset>
-                </div>
+                </div> -->
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-5 col-md-12">
                 <div class="profile-sidebar">
                     <div class="single-doctor-box">
                         <div class="image">
@@ -188,9 +188,9 @@
                             </div>
                         </div>
                         <div class="content">
-                            <h3>Businessman talking on the mobile phone</h3>
-                            <span class="designation">BUSINESSMAN</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim malesuada lectus eget orci, ante sit sed diam.</p>
+                            <h3>{{member?.email}}</h3>
+                            <span class="designation">{{member?.ciudad}}</span>
+                          <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim malesuada lectus eget orci, ante sit sed diam.</p> -->
                       <!--  <span class="status">Accepting New Patients</span>
                             <div class="rating d-flex align-items-center">
                                 <div class="star">
@@ -237,7 +237,7 @@
     </div>
 </div>
 
-<!-- Doctors Area -->
+<!-- Doctors Area
 <div class="doctors-area pb-75">
     <div class="container">
         <h4 class="title">Other Doctors in this Speciality</h4>
@@ -362,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
-</div>
+</div> -->

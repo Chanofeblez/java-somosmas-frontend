@@ -258,39 +258,7 @@
             </div> -->
             <div class="col-lg-12 col-md-12">
                 <div class="row justify-content-center">
-                    <div class="col-xl-3 col-lg-12 col-md-3">
-                        <div class="single-doctor-box">
-                            <div class="image">
-                                <img src="assets/img/coordinators/Exhilarated woman standing on rocks.jpg" alt="doctor-image">
-                                <div class="icon">
-                                    <i class="flaticon-fracture"></i>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <h3><a routerLink="/doctor-profile">Exhilarated woman standing on rocks</a></h3>
-                                <span class="designation">ROCKS</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim malesuada lectus eget orci, ante sit sed diam.</p>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <ul class="social">
-                                        <li>
-                                            <a href="https://facebook.com/" target="_blank"><i class="flaticon-facebook-app-symbol"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.linkedin.com/" target="_blank"><i class="flaticon-linkedin"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="twitter.com" target="_blank"><i class="flaticon-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i></a>
-                                        </li>
-                                    </ul>
-                                    <a routerLink="/doctor-profile" class="link-btn">View Profile <i class="ph-caret-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-12 col-md-3">
+                    <div class="col-xl-3 col-lg-12 col-md-3" *ngFor="let member of members" [routerLink]="['/coordinator-profile/by', member.id]">
                         <div class="single-doctor-box">
                             <div class="image">
                                 <img src="assets/img/coordinators/Farmer at tea plantation in Malaysia.jpg" alt="doctor-image">
@@ -299,8 +267,8 @@
                                 </div>
                             </div>
                             <div class="content">
-                                <h3><a routerLink="/doctor-profile">Farmer at tea plantation</a></h3>
-                                <span class="designation">FARM</span>
+                                <h3><a routerLink="/doctor-profile">{{member.nombre}} {{member.primerApellido}} {{member.segundoApellido}}</a></h3>
+                                <span class="designation">{{member.ciudad}}</span>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim malesuada lectus eget orci, ante sit sed diam.</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <ul class="social">
@@ -322,7 +290,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-12 col-md-3">
+                  <!--  <div class="col-xl-3 col-lg-12 col-md-3">
                         <div class="single-doctor-box">
                             <div class="image">
                                 <img src="assets/img/coordinators/Businessman talking on the mobile phone.jpg" alt="doctor-image">
@@ -385,9 +353,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    
+                    </div> -->
+
+
                    <!-- <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="pagination-area">
                             <div class="nav-links">

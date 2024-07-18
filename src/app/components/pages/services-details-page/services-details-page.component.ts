@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventoForm } from 'src/app/interfaces/evento-form.interfaces';
+import { EventoService } from 'src/app/services/evento.service';
 
 @Component({
   selector: 'app-services-details-page',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesDetailsPageComponent implements OnInit {
 
-  constructor() { }
+  eventos : EventoForm[] = [];
 
-  ngOnInit(): void {
-  }
+    constructor(private eventoService: EventoService
+    ) { }
+
+    ngOnInit(): void {
+		this.eventoService.getEventos()
+		 .subscribe( (events:any) => {
+			console.log("Evento Mostrado");
+			console.log(events);
+			this.eventos = events;
+			console.log(this.eventos[0].nombre);
+		 });
+		 
+	}
 
 }

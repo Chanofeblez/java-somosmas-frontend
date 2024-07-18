@@ -1,4 +1,14 @@
 @import "../../common/doctors/doctors.component.scss";
+.page-title-area{
+  h2{
+        font-size: 50px;
+        color: white;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e0e0e0;
+  }
+
+}
 
 .doctor-profile-area {
     padding-top: 50px;
@@ -9,7 +19,7 @@
         margin-bottom: 18px;
         padding-bottom: 10px;
         border-bottom: 1px solid #e0e0e0;
-        
+
         &:not(:first-child) {
             margin-top: 35px;
         }
@@ -78,7 +88,7 @@
             margin-bottom: 20px;
             padding: 0 0 20px 110px;
             border-bottom: 1px solid #eeeeee;
-    
+
             img {
                 top: 0;
                 left: 0;
@@ -98,7 +108,7 @@
             .review-rating {
                 display: block;
                 margin-bottom: 9px;
-    
+
                 .review-stars {
                     i {
                         line-height: 1;
@@ -106,7 +116,7 @@
                         color: #cecfd2;
                         margin-right: 5px;
                         display: inline-block;
-        
+
                         &.checked {
                             color: #ffc107;
                         }
@@ -134,7 +144,7 @@
             .form-group {
                 margin-bottom: 25px;
                 text-align: start;
-                
+
                 .form-control {
                     height: 55px;
                     border: none;
@@ -207,10 +217,10 @@
                 cursor: pointer;
                 margin-bottom: 0;
                 color: var(--blackColor);
-    
+
                 a {
                     color: var(--primaryColor);
-        
+
                     &:hover {
                         color: var(--secondaryColor);
                     }
@@ -218,7 +228,7 @@
                 .form-check-input {
                     margin-top: .24em;
                     box-shadow: unset !important;
-    
+
                     &[type=checkbox] {
                         border-radius: 0;
                     }

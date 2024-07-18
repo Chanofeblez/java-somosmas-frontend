@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MiembroService } from 'src/app/services/miembro.service';
+import { MemberService as MiembroService } from 'src/app/services/miembro.service';
 import { RegisterForm } from 'src/app/interfaces/register-form.interfaces';
 
 @Component({
@@ -10,7 +10,7 @@ import { RegisterForm } from 'src/app/interfaces/register-form.interfaces';
   styleUrls: ['./register-page.component.scss']
 })
 export class RegisterPageComponent implements OnInit {
-  
+
   public formSubmitted = false;
 
   public registerForm: FormGroup = this.fb.group({
@@ -36,13 +36,13 @@ export class RegisterPageComponent implements OnInit {
 
   autenticar(): void {
     this.formSubmitted=true;
-    console.log(this.registerForm.value);    
-    
-    if( !this.registerForm.invalid){      
+    console.log(this.registerForm.value);
+
+    if( !this.registerForm.invalid){
       return;
     }
-    
-    
+
+
     //Realizar posteo
     this.miembroService.crearMiembro( this.registerForm.value )
         .subscribe( (resp:any) => {
@@ -54,24 +54,24 @@ export class RegisterPageComponent implements OnInit {
             timer: 1500
           });
           console.log('miembro creado')
-          console.log(resp); 
-          localStorage.clear();  
+          console.log(resp);
+          localStorage.clear();
           localStorage.setItem('id', resp.id.toString());
-          localStorage.setItem('nombre', resp.nombre); 
-          localStorage.setItem('primerApellido', resp.primerApellido);  
-          localStorage.setItem('segundoApellido', resp.segundoApellido);  
+          localStorage.setItem('nombre', resp.nombre);
+          localStorage.setItem('primerApellido', resp.primerApellido);
+          localStorage.setItem('segundoApellido', resp.segundoApellido);
           localStorage.setItem('telefono', resp.telefono);
           localStorage.setItem('ciudad', resp.ciudad);
           localStorage.setItem('pais', resp.pais);
-          localStorage.setItem('rol', resp.unRol);   
-          localStorage.setItem('email', resp.email);           
+          localStorage.setItem('rol', resp.unRol);
+          localStorage.setItem('email', resp.email);
         }, (err) => {
           Swal.fire({
             icon: "error",
             title: "Oops...",
             text: ( err.error.message ),
             //footer: '<a href="#">Why do I have this issue?</a>'
-          });         
+          });
         });
   }
 
@@ -81,14 +81,14 @@ export class RegisterPageComponent implements OnInit {
     } else{
       return false;
     }
-  } 
+  }
 
   contrasenaNoValida(){
     const pass1 = this.registerForm.get('password1')?.value;
     const pass2 = this.registerForm.get('password2')?.value;
 
     if(pass1!==pass2 && this.formSubmitted ){
-      return true;      
+      return true;
     } else {
       return false;
     }

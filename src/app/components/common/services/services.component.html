@@ -9,83 +9,23 @@
             <h4>Explore key political events, from debates and conferences to encounters with prominent leaders, to stay informed and actively engage in the conversation shaping our future.</h4>
         </div>
         <div class="row justify-content-center" >
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services-box">
-                    <div class="image">
-                        <i class="flaticon-virus"></i>
-                    </div>
-                    <h3><a routerLink="/services-details">COVID-19</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim malesuada lectus eget orci, ante sit sed diam. Tincidunt mattis aenean.</p>
-                    <a routerLink="/services-details" class="link-btn">Read More <i class="ph-caret-right"></i></a>
-                    <div class="back-icon">
-                        <i class="flaticon-virus"></i>
-                    </div>
-                </div>
-            </div>
             
-            <div class="col-lg-4 col-md-6">
+            
+            <div class="col-lg-4 col-md-6" *ngFor="let evento of eventos">
                 <div class="single-services-box card" >
                     <div class="icon">
-                        <img src="assets/img/somosmaslogo1.0.png" class="card-img-top" alt="...">
+                        <img src="{{evento.imagenUrl}}" class="card-img-top" alt="...">
                     </div>
                     
-                    <h3><a routerLink="/services-details">COVID-19</a></h3>
+                    <h3><a routerLink="/services-details">{{evento.nombre}}</a></h3>
                     <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text">{{evento.descripcion}}</p>
                       <a routerLink="/services-details" class="link-btn">Read More <i class="ph-caret-right"></i></a>
                     </div>
                   </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/img/somosmaslogo1.0.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-tooth"></i>
-                    </div>
-                    <h3><a routerLink="/services-details">Dentistry</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim malesuada lectus eget orci, ante sit sed diam. Tincidunt mattis aenean.</p>
-                    <a routerLink="/services-details" class="link-btn">Read More <i class="ph-caret-right"></i></a>
-                    <div class="back-icon">
-                        <i class="flaticon-tooth"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-kidneys"></i>
-                    </div>
-                    <h3><a routerLink="/services-details">Urology</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim malesuada lectus eget orci, ante sit sed diam. Tincidunt mattis aenean.</p>
-                    <a routerLink="/services-details" class="link-btn">Read More <i class="ph-caret-right"></i></a>
-                    <div class="back-icon">
-                        <i class="flaticon-kidneys"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services-box">
-                    <div class="icon">
-                        <i class="flaticon-heartbeat"></i>
-                    </div>
-                    <h3><a routerLink="/services-details">Cardiology</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim malesuada lectus eget orci, ante sit sed diam. Tincidunt mattis aenean.</p>
-                    <a routerLink="/services-details" class="link-btn">Read More <i class="ph-caret-right"></i></a>
-                    <div class="back-icon">
-                        <i class="flaticon-heartbeat"></i>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div> 

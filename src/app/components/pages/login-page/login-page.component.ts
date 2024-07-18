@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MiembroService } from 'src/app/services/miembro.service';
+import { MemberService as MiembroService } from 'src/app/services/miembro.service';
 import Swal from 'sweetalert2';
 import { Miembro } from '../../models/members.model';
 
@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
-  public loginForm: FormGroup = this.fb.group({    
+  public loginForm: FormGroup = this.fb.group({
     email: [ localStorage.getItem('email') || '',[Validators.required, Validators.email]],
     password: ['',[Validators.required]],
     remember: [this.recordarme()]
@@ -38,21 +38,21 @@ export class LoginPageComponent implements OnInit {
   autenticar(): void {
     console.log('login');
     this.formSubmitted=true;
-    console.log(this.loginForm.value);  
+    console.log(this.loginForm.value);
 
     this.miembroService.loginMiembro( this.loginForm.value )
-    .subscribe( (resp:any) => {         
+    .subscribe( (resp:any) => {
       console.log('miembro logueado')
       console.log(resp);
-      
+
       localStorage.setItem('id', resp.id);
-      localStorage.setItem('nombre', resp.nombre); 
-      localStorage.setItem('primerApellido', resp.primerApellido);  
-      localStorage.setItem('segundoApellido', resp.segundoApellido);  
+      localStorage.setItem('nombre', resp.nombre);
+      localStorage.setItem('primerApellido', resp.primerApellido);
+      localStorage.setItem('segundoApellido', resp.segundoApellido);
       localStorage.setItem('telefono', resp.telefono);
       localStorage.setItem('ciudad', resp.ciudad);
-      localStorage.setItem('pais', resp.pais);        
-      
+      localStorage.setItem('pais', resp.pais);
+
       if( this.loginForm.get('remember')?.value ){
         localStorage.setItem('email', resp.email);
       } else {
@@ -64,7 +64,7 @@ export class LoginPageComponent implements OnInit {
         title: "Oops...",
         text: ( err.error.message ),
         //footer: '<a href="#">Why do I have this issue?</a>'
-      });         
+      });
     });
   }
 

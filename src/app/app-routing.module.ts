@@ -36,7 +36,8 @@ import { CoordinatorsPageComponent } from './components/pages/coordinators-page/
 import { BoardPageComponent } from './components/pages/board-page/board-page.component';
 
 const routes: Routes = [
-    {path: '', component: HomeDemoOneComponent},
+    {path: 'home', component: HomeDemoOneComponent},
+
     //{path: 'index-2', component: HomeDemoTwoComponent},
     //{path: '', component: HomeDemoThreeComponent},
     {path: 'about', component: AboutPageComponent},
@@ -46,7 +47,7 @@ const routes: Routes = [
     {path: 'services-details', component: ServicesDetailsPageComponent},
     {path: 'departments', component: DepartmentsPageComponent},
     {path: 'doctors', component: DoctorsPageComponent},
-    {path: 'coordinator-profile', component: DoctorProfilePageComponent},
+    {path: 'coordinator-profile/by/:id', component: DoctorProfilePageComponent},
     {path: 'faq', component: FaqPageComponent},
     {path: 'thank-you', component: ThankYouPageComponent},
     {path: 'login', component: LoginPageComponent},
@@ -68,8 +69,7 @@ const routes: Routes = [
     {path: 'coordinators', component: CoordinatorsPageComponent},
     {path: 'boards', component: BoardPageComponent},
     // Here add new pages component
-
-    {path: '**', component: NotFoundComponent} // This line will remain down from the whole pages component list
+    {path: '**', redirectTo:'home'} // This line will remain down from the whole pages component list
 ];
 
 @NgModule({
