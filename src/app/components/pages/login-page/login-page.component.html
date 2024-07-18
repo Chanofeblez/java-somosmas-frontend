@@ -33,23 +33,26 @@
                     <p>Didn't have an account? <a routerLink="/register">Register now!</a></p>
                     <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="autenticar()">
                         <div class="form-group">
-                            <input type="email" 
-                                   class="form-control" 
-                                   placeholder="Email" 
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="Email"
                                    formControlName="email">
                         </div>
                         <div class="form-group">
-                            <input type="password" 
-                                   class="form-control" 
+                            <input type="password"
+                                   class="form-control"
                                    placeholder="Password"
                                    formControlName="password">
                         </div>
-                        <button type="submit" >Login</button>
+                        <button type="submit"
+                                [disabled]="loginForm.invalid">
+                        Login
+                      </button>
                         <div class="row align-items-center">
                             <div class="col-6 col-lg-6 col-md-6 remember-me-wrap">
                                 <div class="form-check">
-                                    <input class="form-check-input" 
-                                                  type="checkbox" 
+                                    <input class="form-check-input"
+                                                  type="checkbox"
                                                   id="remember-me"
                                                   formControlName="remember">
                                     <label class="form-check-label" for="remember-me">Remember me</label>
