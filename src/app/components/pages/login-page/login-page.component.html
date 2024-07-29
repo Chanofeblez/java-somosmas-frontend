@@ -31,7 +31,7 @@
                 <div class="login-form">
                     <h2>Welcome Back!</h2>
                     <p>Didn't have an account? <a routerLink="/register">Register now!</a></p>
-                    <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="autenticar()">
+                    <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="login()">
                         <div class="form-group">
                             <input type="email"
                                    class="form-control"
@@ -45,7 +45,7 @@
                                    formControlName="password">
                         </div>
                         <button type="submit"
-                                [disabled]="loginForm.invalid">
+                                [disabled]="myForm.invalid">
                         Login
                       </button>
                         <div class="row align-items-center">

@@ -31,74 +31,107 @@
                 <div class="register-form">
                     <h2>Create your free account</h2>
                     <p>Already have an account? <a routerLink="/login">Login</a></p>
-                    <form autocomplete="off" [formGroup]="registerForm" (ngSubmit)="autenticar()">                        
+                    <form id="formulario"  autocomplete="off" [formGroup]="registerForm" (ngSubmit)="autenticar()">
                         <div class="form-group">
-                            <input type="text" 
-                                   class="form-control" 
-                                   placeholder="Name" 
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Name"
                                    formControlName="nombre">
+                             <span class="form-text text-danger" *ngIf="isValidField('nombre')">
+                              *You must enter your name.
+                             </span>
                         </div>
                         <div class="form-group">
-                            <input type="text" 
-                                   class="form-control" 
-                                   placeholder="Last Name" 
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Last Name"
                                    formControlName="primerApellido">
+                            <span class="form-text text-danger" *ngIf="isValidField('primerApellido')">
+                            *You must enter your last name.
+                            </span>
                         </div>
                         <div class="form-group">
-                            <input type="text" 
-                                   class="form-control" 
-                                   placeholder="Second Last Name" 
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Second Last Name"
                                    formControlName="segundoApellido">
+                            <span class="form-text text-danger" *ngIf="isValidField('segundoApellido')">
+                              *You must enter your second last name (if you have one) (non-mandatory field).
+                            </span>
                         </div>
                         <div class="form-group">
-                            <input type="email" 
+                            <input type="email"
                                    class="form-control"
                                    placeholder="Email"
                                    formControlName="email">
+                            <span class="form-text text-danger" *ngIf="isValidField('email')">
+                              *The email is mandatory and must be valid.
+                            </span>
                         </div>
                         <div class="form-group">
-                            <input type="password" 
+                            <input type="password"
                                    class="form-control"
-                                   placeholder="Password" 
+                                   placeholder="Password"
                                    formControlName="password1">
+                            <span class="form-text text-danger" *ngIf="isValidField('password1')">
+                            *You must enter your password.
+                            </span>
                         </div>
                         <div class="form-group">
-                            <input type="password" 
+                            <input type="password"
                                    class="form-control"
                                    placeholder="Password Confirm"
                                    formControlName="password2">
+                            <span class="form-text text-danger" *ngIf="isValidField('password2')">
+                            *You must confirm your password.
+                            </span>
                         </div>
                         <div class="form-group">
-                            <input type="text" 
-                                   class="form-control" 
+                            <input type="text"
+                                   class="form-control"
                                    placeholder="Phone Number"
                                    formControlName="telefono">
+                            <span class="form-text text-danger" *ngIf="isValidField('telefono')">
+                            *You must enter your phone number.
+                            </span>
                         </div>
                         <div class="form-group">
-                            <input type="text" 
+                            <input type="text"
                                    class="form-control"
                                    placeholder="City"
                                    formControlName="ciudad">
+                                   <span class="form-text text-danger" *ngIf="isValidField('ciudad')">
+                                    *You must enter your city.
+                                    </span>
                         </div>
                         <div class="form-group">
-                            <input type="text" 
+                         <!--   <input type="text"
                                    class="form-control"
                                    placeholder="Country"
-                                   formControlName="pais">
+                                   formControlName="pais">  -->
+                                   <select id="countrys" name="countrys" class="form-control" formControlName="pais">
+                                    <option value="" disabled selected>Choose a country:</option>
+                                    <option [value]="country.name" *ngFor="let country of countries"
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Country">{{country.name}}</option>
+                                  </select>
+                                  <span class="form-text text-danger" *ngIf="isValidField('pais')">
+                                    *You must choose your country.
+                                  </span>
                         </div>
+
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="terms-conditions" formControlName="terminos">
                             <label class="form-check-label" for="terms-conditions">I agree to all <a href="#">terms & conditions</a></label>
                         </div>
                         <div class="row">
                             <div class="col text-danger">
-                                <p *ngIf="campoNoValido('nombre')">* The name is required.</p>
-                                <p *ngIf="campoNoValido('email')">* The email is mandatory and must be valid.</p>
-                                <p *ngIf="contrasenaNoValida()">* Passwords must be the same</p>
-                                <p *ngIf="aceptaTerminos()">* You must accept the terms.</p>
+                                <p class="form-text text-danger" *ngIf="contrasenaNoValida()">*Passwords must be the same</p>
+                                <p class="form-text text-danger" *ngIf="aceptaTerminos()">*You must accept the terms.</p>
                             </div>
                         </div>
-                        <button type="submit">Register Now</button>
+                        <button id="btn" type="submit" class="opacity-50" disabled>Register Now</button>
                     </form>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterForm } from 'src/app/interfaces/register-form.interfaces';
+import { RegisterResponse } from 'src/app/interfaces/register-form.interfaces';
 import { MemberService as MiembroService } from 'src/app/services/miembro.service';
 import Swal from 'sweetalert2';
 
@@ -14,15 +14,15 @@ export class NavbarComponent implements OnInit {
     loginB:boolean=true;
     idStorage: string | null = localStorage.getItem("id");
     idFinal:number = -1;
-    user: RegisterForm = {
-        nombre:"",
-        primerApellido:"",
-        segundoApellido:"",
-        email:"",
-        telefono:"",
-        ciudad:"",
-        pais:""
-    };
+   // user: RegisterResponse = {
+   //     nombre:"",
+   //     primerApellido:"",
+    //    segundoApellido:"",
+   //     email:"",
+   //     telefono:"",
+   //     ciudad:"",
+   //     pais:""
+    //};
 
 
     constructor(
@@ -38,15 +38,15 @@ export class NavbarComponent implements OnInit {
             this.idFinal=parseInt(this.idStorage);
             this.loginB = false;
             console.log(this.idFinal);
-            console.log(this.user);
+    //        console.log(this.user);
 
-            this.user.nombre=localStorage.getItem("nombre") || '';
-            this.user.primerApellido=localStorage.getItem("primerApellido") || '';
-            this.user.segundoApellido=localStorage.getItem("segundoApellido") || '';
-            this.user.email=localStorage.getItem("email") || '';
-            this.user.telefono=localStorage.getItem("nombre") || '';
-            this.user.ciudad=localStorage.getItem("ciudad") || '';
-            this.user.pais=localStorage.getItem("pais") || '';
+     //       this.user.nombre=localStorage.getItem("nombre") || '';
+     //       this.user.primerApellido=localStorage.getItem("primerApellido") || '';
+     //       this.user.segundoApellido=localStorage.getItem("segundoApellido") || '';
+     //       this.user.email=localStorage.getItem("email") || '';
+     //       this.user.telefono=localStorage.getItem("nombre") || '';
+     //       this.user.ciudad=localStorage.getItem("ciudad") || '';
+     //       this.user.pais=localStorage.getItem("pais") || '';
         }
     }
 

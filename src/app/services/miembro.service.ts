@@ -1,11 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { RegisterForm } from '../interfaces/register-form.interfaces';
+import { inject, Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { LoginForm } from '../interfaces/login-form.interfaces';
-import { Observable } from 'rxjs';
 import { Member } from '../interfaces/members';
-import { Miembro } from '../components/models/members.model';
+import { HttpClient } from '@angular/common/http';
+import { RegisterResponse } from '../interfaces/register-form.interfaces';
 
 const base_url = environment.base_url;
 
@@ -15,28 +12,15 @@ const base_url = environment.base_url;
 export class MemberService {
 
   public members: Member[] = [];
+  public member?: Member;
 
-  constructor(private http: HttpClient) { }
 
-  crearMiembro( formData: RegisterForm ){
+  private http = inject(HttpClient);
 
-    return this.http.post(`${ base_url }/miembros/register`, formData);
-
-  }
-
-  loginMiembro( formData: LoginForm ){
-
-    return this.http.post(`${ base_url }/miembros/login`, formData);
-}
-
-  getMiembro( formData: Number ){
-
-  //return this.http.get(`${ base_url }/miembros/miembro`, formData);
-}
 
 //Get All Members From DB
   getMiembros( ): Member[]{
-  this.http.get<Member[]>(`${ base_url }/api/members`)
+    this.http.get<Member[]>(`${ base_url }/api/members`)
   .subscribe(members => {
     this.members = members;
    });

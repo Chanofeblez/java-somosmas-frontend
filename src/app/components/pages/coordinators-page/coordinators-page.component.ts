@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Member } from 'src/app/interfaces/members';
 import { MemberService} from 'src/app/services/miembro.service';
 
@@ -10,8 +10,9 @@ import { MemberService} from 'src/app/services/miembro.service';
 export class CoordinatorsPageComponent implements OnInit {
 
   public members: Member[] = [];
+  private memberService= inject(MemberService);
 
-  constructor(private memberService: MemberService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.getAllMember();

@@ -1,15 +1,6 @@
 import { NgModule } from '@angular/core';
-import { TabsModule } from 'ngx-tabset';
-import { AccordionModule } from "ngx-accordion";
-import { StickyNavModule } from 'ng2-sticky-nav';
-import { NgxScrollTopModule } from 'ngx-scrolltop';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeDemoOneComponent } from './components/pages/home-demo-one/home-demo-one.component';
 import { HomeDemoTwoComponent } from './components/pages/home-demo-two/home-demo-two.component';
@@ -65,6 +56,19 @@ import { BlogTagPageComponent } from './components/pages/blog-tag-page/blog-tag-
 import { BlogSearchResultPageComponent } from './components/pages/blog-search-result-page/blog-search-result-page.component';
 import { CoordinatorsPageComponent } from './components/pages/coordinators-page/coordinators-page.component';
 import { BoardPageComponent } from './components/pages/board-page/board-page.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { StickyNavModule } from 'ng2-sticky-nav';
+import { TabsModule } from 'ngx-tabset';
+import { AccordionModule } from 'ngx-accordion';
+import { RouterModule, Routes } from '@angular/router';
 
 
 
@@ -122,20 +126,21 @@ import { BoardPageComponent } from './components/pages/board-page/board-page.com
         BlogTagPageComponent,
         BlogSearchResultPageComponent,
         CoordinatorsPageComponent,
-        BoardPageComponent
+        BoardPageComponent,
     ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        CarouselModule,
-        NgxScrollTopModule,
-        BrowserAnimationsModule,
-        StickyNavModule,
-        TabsModule,
-        AccordionModule,
-        FormsModule,
-        ReactiveFormsModule,
-        HttpClientModule
+      BrowserModule,
+      AppRoutingModule,
+      CarouselModule,
+      NgxScrollTopModule,
+      BrowserAnimationsModule,
+      FormsModule,
+      ReactiveFormsModule,
+      HttpClientModule,
+      RouterModule,
+      //StickyNavModule,
+      //TabsModule,
+      //AccordionModule
     ],
     providers: [],
     bootstrap: [AppComponent]

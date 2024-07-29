@@ -47,7 +47,7 @@
                             </li>-->
                         </ul>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">Pages</a>
                         <ul class="dropdown-menu">
@@ -115,7 +115,7 @@
                             </li>
                             <li class="nav-item">
                                 <a routerLink="/services-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Services Details</a>
-                            </li> 
+                            </li>
                         </ul>
                     </li> -->
                     <li class="nav-item">
@@ -134,7 +134,7 @@
                     <li class="nav-item">
                         <a routerLink="/blog-grid" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blogs</a>
                     </li>
-                    
+
                     <!--<li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">Blog</a>
                         <ul class="dropdown-menu">
@@ -184,7 +184,7 @@
                         <a routerLink="/login" *ngIf="loginB" login=!login class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login/Register</a>
                     </li>
                     <li class="nav-item">
-                        <a href="javascript:void(0)" *ngIf="!loginB" class="dropdown-toggle nav-link">Hi,  {{user.nombre}}</a>
+                        <a href="javascript:void(0)" *ngIf="!loginB" class="dropdown-toggle nav-link">Hi,  </a> <!--{{user.nombre}}-->
                         <ul class="dropdown-menu">
                             <li class="nav-item">
                                 <!-- routerLink="/doctors" -->
@@ -192,14 +192,14 @@
                             </li>
                             <li class="nav-item">
                                 <!-- routerLink="/doctors" -->
-                                <a routerLink="/"  class="nav-link" *ngIf="user.unRol === 'coordinador' " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Group</a>
+                                <a routerLink="/"  class="nav-link"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Group</a> <!--*ngIf="user.unRol === 'coordinador' "-->
                             </li>
                             <li class="nav-item">
                                 <!-- routerLink="/doctors-profile" -->
                                 <a routerLink="/" class="nav-link" onclick="logout()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Logout</a>
                             </li>
                         </ul>
-                    </li>                   
+                    </li>
                 </ul>
                 <ul class="navbar-nav for-responsive">
                     <li class="nav-item">
@@ -219,7 +219,7 @@
                             </li>-->
                         </ul>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">Pages</a>
                         <ul class="dropdown-menu">
@@ -233,7 +233,7 @@
                                 <a routerLink="/login" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a routerLink="/register" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Register</a> 
+                                <a routerLink="/register" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Register</a>
                             </li>
                             <li class="nav-item">
                                 <a routerLink="/forgot-password" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Forgot Password</a>
@@ -368,7 +368,7 @@
             </div>
         </nav>
     </div>
-</div> 
+</div>
 
 <!-- Search Overlay -->
 <div class="search-overlay" [class.search-overlay-active]="searchClassApplied">

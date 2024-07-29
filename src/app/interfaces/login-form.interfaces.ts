@@ -1,6 +1,6 @@
-
-export interface LoginForm{
-    email: string;
-    password: string;
-    remember: boolean;
+export interface LoginResponse {
+  username: string;
+  message:  string;
+  jwt:      string;
+  status:   boolean;
 }

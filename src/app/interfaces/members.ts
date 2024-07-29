@@ -1,5 +1,5 @@
 export interface Member {
-  id:                   number;
+  id?:                   number;
   nombre:               string;
   primerApellido:       string;
   segundoApellido:      null | string;
@@ -8,11 +8,11 @@ export interface Member {
   password:             string;
   ciudad:               string;
   pais:                 string;
-  enabled:              boolean;
-  accountNotExpired:    boolean;
-  accountNotLocked:     boolean;
-  credentialNotExpired: boolean;
-  rolesList:            RolesList[];
+  enabled?:              boolean;
+  accountNotExpired?:    boolean;
+  accountNotLocked?:     boolean;
+  credentialNotExpired?: boolean;
+  rolesList?:            RolesList[];
 }
 
 export interface RolesList {
