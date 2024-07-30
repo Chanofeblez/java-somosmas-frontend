@@ -5,6 +5,7 @@ import { MemberService} from 'src/app/services/miembro.service';
 import { RegisterResponse } from 'src/app/interfaces/register-form.interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 import { Country } from 'src/app/interfaces/country';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class RegisterPageComponent implements OnInit {
 
   private fb= inject( FormBuilder ) ;
   private authService= inject(AuthService);
+  private router = inject(Router);
 
   firstNameAndLastnamePattern : string = '([a-zA-Z])';//Para validar que en el campo sea nombre y apellido juntos: '([a-zA-Z]+) ([a-zA-Z]+)'
   emailPattern : string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
@@ -85,8 +87,9 @@ export class RegisterPageComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           });
-          console.log('miembro creado')
-          console.log(resp);
+          console.log('miembro creado');
+          this.registerForm.reset();
+          this.router.navigate(['/']);
      //     localStorage.clear();
      //     localStorage.setItem('id', resp.id.toString());
      //     localStorage.setItem('nombre', resp.nombre);

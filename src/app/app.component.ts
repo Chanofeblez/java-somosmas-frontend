@@ -28,17 +28,18 @@ export class AppComponent {
     private authService = inject(AuthService);
     private memberService = inject(MemberService);
 
-    constructor(
-      //Configuracion de la maqueta
-        public router: Router
-    ) {}
+    //Configuracion de la maqueta
+    public router = inject(Router);
+
+    constructor() {
+      this.memberService.getMiembros();
+    }
 
     ngOnInit(){
       //Configuracion de la maqueta
         this.recallJsFuntions();
-
         this.memberService.getMiembros();
-
+        console.log("band1");
     }
 
 

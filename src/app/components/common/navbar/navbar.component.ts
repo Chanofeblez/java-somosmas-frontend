@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterResponse } from 'src/app/interfaces/register-form.interfaces';
-import { MemberService as MiembroService } from 'src/app/services/miembro.service';
+import { Member } from 'src/app/interfaces';
+import { AuthService } from 'src/app/services/auth.service';
+import { MemberService} from 'src/app/services/miembro.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,41 +13,27 @@ import Swal from 'sweetalert2';
 export class NavbarComponent implements OnInit {
 
     loginB:boolean=true;
-    idStorage: string | null = localStorage.getItem("id");
+    idStorage: string | null;
     idFinal:number = -1;
-   // user: RegisterResponse = {
-   //     nombre:"",
-   //     primerApellido:"",
-    //    segundoApellido:"",
-   //     email:"",
-   //     telefono:"",
-   //     ciudad:"",
-   //     pais:""
-    //};
+    member: Member | undefined;
 
+    public router         = inject(Router);
+    public miembroService = inject(MemberService);
+    public authService    = inject(AuthService);
 
-    constructor(
-        public router: Router,
-        public miembroService: MiembroService
-    ) {
-
+    constructor() {
+      this.idStorage = localStorage.getItem("member");
      }
 
     ngOnInit(): void {
+      this.idStorage = localStorage.getItem("member");
 
         if(this.idStorage!==null){
+          this.member = this.miembroService.getMiembrobyEmail(this.idStorage);
             this.idFinal=parseInt(this.idStorage);
             this.loginB = false;
-            console.log(this.idFinal);
-    //        console.log(this.user);
-
-     //       this.user.nombre=localStorage.getItem("nombre") || '';
-     //       this.user.primerApellido=localStorage.getItem("primerApellido") || '';
-     //       this.user.segundoApellido=localStorage.getItem("segundoApellido") || '';
-     //       this.user.email=localStorage.getItem("email") || '';
-     //       this.user.telefono=localStorage.getItem("nombre") || '';
-     //       this.user.ciudad=localStorage.getItem("ciudad") || '';
-     //       this.user.pais=localStorage.getItem("pais") || '';
+            console.log(this.idStorage);
+            console.log(this.loginB);
         }
     }
 
@@ -70,6 +57,8 @@ export class NavbarComponent implements OnInit {
     logout() {
         localStorage.clear();
         this.loginB=true;
+        console.log("Log1");
+        this.authService.logout();
     }
 
 }

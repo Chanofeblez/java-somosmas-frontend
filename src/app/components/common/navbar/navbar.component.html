@@ -183,8 +183,8 @@
                     <li class="nav-item">
                         <a routerLink="/login" *ngIf="loginB" login=!login class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login/Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" *ngIf="!loginB" class="dropdown-toggle nav-link">Hi,  </a> <!--{{user.nombre}}-->
+                    <li class="nav-item" >
+                        <a href="javascript:void(0)" *ngIf="!loginB" class="dropdown-toggle nav-link">Hi, {{idStorage }}</a> <!--{{user.nombre}}-->
                         <ul class="dropdown-menu">
                             <li class="nav-item">
                                 <!-- routerLink="/doctors" -->
@@ -196,7 +196,7 @@
                             </li>
                             <li class="nav-item">
                                 <!-- routerLink="/doctors-profile" -->
-                                <a routerLink="/" class="nav-link" onclick="logout()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Logout</a>
+                                <a routerLink="/" class="nav-link" (click)="logout()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Logout</a>
                             </li>
                         </ul>
                     </li>

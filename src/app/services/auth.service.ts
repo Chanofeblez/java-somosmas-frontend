@@ -35,6 +35,7 @@ export class AuthService{
     this._authStatus.set(AuthStatus.authenticated);
     if(remember){
       this.logout();
+      console.log(email);
       localStorage.setItem('member', email );
     }
     return true;
@@ -58,6 +59,7 @@ export class AuthService{
   }
 
   logout() {
+    console.log("Log2");
     localStorage.removeItem('member');
     this._currentUser.set(null);
     this._authStatus.set(AuthStatus.notAuthenticated);

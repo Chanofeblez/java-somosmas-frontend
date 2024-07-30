@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventoForm } from 'src/app/interfaces/evento-form.interfaces';
 import { EventoService } from 'src/app/services/evento.service';
@@ -12,9 +12,10 @@ export class ServicesComponent implements OnInit {
 
     eventos : EventoForm[] = [];
 
-    constructor(private eventoService: EventoService,
-                public router: Router
-    ) { }
+    private eventoService = inject(EventoService);
+    public router         = inject(Router);
+
+    constructor() { }
 
     ngOnInit(): void {
 		this.eventoService.getEventos()
@@ -24,9 +25,9 @@ export class ServicesComponent implements OnInit {
 			this.eventos = events;
 			console.log(this.eventos[0].nombre);
 		 });
-		 
+
 	}
 
-   
+
 
 }
