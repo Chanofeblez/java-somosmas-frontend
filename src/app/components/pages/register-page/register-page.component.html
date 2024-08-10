@@ -29,9 +29,10 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6">
                 <div class="register-form">
-                    <h2>Create your free account</h2>
-                    <p>Already have an account? <a routerLink="/login">Login</a></p>
-                    <form id="formulario"  autocomplete="off" [formGroup]="registerForm" (ngSubmit)="autenticar()">
+                  <h4>Join us and fight for Cuba's freedom. Together, we can make a difference.</h4>
+                  <!--  <h2>Create your free account</h2>
+                    <p>Already have an account? <a routerLink="/login">Login</a></p> -->
+                    <form id="formulario"  autocomplete="off" [formGroup]="registerForm" (ngSubmit)="autenticar()"> <!--(ngSubmit)="autenticar()"-->
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
@@ -120,6 +121,14 @@
                                     *You must choose your country.
                                   </span>
                         </div>
+                     <!--   <div class="form-group card-body">
+                          <app-payment></app-payment>
+
+
+                          <stripe-buy-button buy-button-id="buy_btn_1PkmxORq27xQO3jTqhkK4Jox"
+                            publishable-key="pk_test_51PiycgRq27xQO3jTSs0vkGJeSRRNb46BJAKEd5mlaf0HrqQS0jpCvJ84mAouNqJBJiUijqDCf74lLakILFCml69g002Up0g4Q0">
+                          </stripe-buy-button>
+                        </div> -->
 
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="terms-conditions" formControlName="terminos">
@@ -131,7 +140,7 @@
                                 <p class="form-text text-danger" *ngIf="aceptaTerminos()">*You must accept the terms.</p>
                             </div>
                         </div>
-                        <button id="btn" type="submit" class="opacity-50" disabled>Register Now</button>
+                        <button id="btn" type="submit" class="opacity-50" mat-button >Register Now</button>
                     </form>
                 </div>
             </div>

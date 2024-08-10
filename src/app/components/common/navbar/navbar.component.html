@@ -122,11 +122,11 @@
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">Board</a>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
-                                <!-- routerLink="/doctors" -->
+                                <!-- routerLink="/coordinators" -->
                                 <a routerLink="/coordinators" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Coordinators</a>
                             </li>
                             <li class="nav-item">
-                                <!-- routerLink="/doctors-profile" -->
+                                <!-- routerLink="/boards" -->
                                 <a routerLink="/boards" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Presidential Board</a>
                             </li>
                         </ul>
@@ -180,11 +180,15 @@
                             </li>
                         </ul>
                     </li>-->
-                    <li class="nav-item">
+              <!--   El link al Login and Register
+                     <li class="nav-item">
                         <a routerLink="/login" *ngIf="loginB" login=!login class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login/Register</a>
-                    </li>
-                    <li class="nav-item" >
-                        <a href="javascript:void(0)" *ngIf="!loginB" class="dropdown-toggle nav-link">Hi, {{idStorage }}</a> <!--{{user.nombre}}-->
+                    </li> -->
+                    <li class="nav-item">
+                      <a routerLink="/register" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Register</a>
+                  </li>
+                    <li class="nav-item"  *ngIf="false">
+                        <a href="javascript:void(0)"  class="dropdown-toggle nav-link">Hi, {{idStorage }}</a> <!--{{user.nombre}}-->
                         <ul class="dropdown-menu">
                             <li class="nav-item">
                                 <!-- routerLink="/doctors" -->

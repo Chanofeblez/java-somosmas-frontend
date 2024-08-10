@@ -1,0 +1,17 @@
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm membership</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <script async src="https://js.stripe.com/v3/buy-button.js">
+        </script>
+
+        <stripe-buy-button (click)="onClose()" buy-button-id="buy_btn_1PkmxORq27xQO3jTqhkK4Jox"
+          publishable-key="pk_test_51PiycgRq27xQO3jTSs0vkGJeSRRNb46BJAKEd5mlaf0HrqQS0jpCvJ84mAouNqJBJiUijqDCf74lLakILFCml69g002Up0g4Q0">
+        </stripe-buy-button>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+      <!--  <button type="button" class="btn btn-success" (click)="confirmar(nombre)">Confirm</button>
+        <button type="button" class="btn btn-danger" (click)="cancelar(nombre)">Cancel</button> -->
+      </div>
+

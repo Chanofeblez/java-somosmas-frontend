@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
@@ -67,8 +67,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StickyNavModule } from 'ng2-sticky-nav';
 import { TabsModule } from 'ngx-tabset';
-import { AccordionModule } from 'ngx-accordion';
+import { AccordionModule } from '@andreagrossetti/ngx-accordion';
 import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentComponent } from './components/common/payment/payment.component';
+import { NgxStripeModule, provideNgxStripe } from 'ngx-stripe';
+import { MatDialogModule } from '@angular/material/dialog';
+import { StripemodalComponent } from './components/common/stripemodal/stripemodal.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -127,6 +133,8 @@ import { RouterModule, Routes } from '@angular/router';
         BlogSearchResultPageComponent,
         CoordinatorsPageComponent,
         BoardPageComponent,
+        PaymentComponent,
+        StripemodalComponent
     ],
     imports: [
       BrowserModule,
@@ -138,11 +146,23 @@ import { RouterModule, Routes } from '@angular/router';
       ReactiveFormsModule,
       HttpClientModule,
       RouterModule,
+      NgbModule,
+      NgxStripeModule.forRoot(),
+      MatDialogModule,
+      ToastrModule.forRoot({
+        // Opciones de configuración global para ngx-toastr
+        timeOut: 3000,
+        positionClass: 'toast-top-center',
+        preventDuplicates: true,
+      })
       //StickyNavModule,
       //TabsModule,
       //AccordionModule
     ],
-    providers: [],
-    bootstrap: [AppComponent]
+    providers: [
+      provideNgxStripe(),
+    ],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

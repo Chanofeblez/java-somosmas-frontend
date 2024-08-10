@@ -50,7 +50,7 @@ const routes: Routes = [
     {path: 'coordinator-profile/by/:id', component: DoctorProfilePageComponent},
     {path: 'faq', component: FaqPageComponent},
     {path: 'thank-you', component: ThankYouPageComponent},
-    {path: 'login', component: LoginPageComponent},
+    {path: 'loginnnnnnn', component: LoginPageComponent},
     {path: 'register', component: RegisterPageComponent},
     {path: 'forgot-password', component: ForgotPasswordPageComponent},
     {path: 'mission', component: PrivacyPolicyPageComponent},

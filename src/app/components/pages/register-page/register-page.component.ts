@@ -6,6 +6,10 @@ import { RegisterResponse } from 'src/app/interfaces/register-form.interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 import { Country } from 'src/app/interfaces/country';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { StripemodalComponent } from '../../common/stripemodal/stripemodal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { StripeService } from 'src/app/services/stripe.service';
 
 
 @Component({
@@ -15,13 +19,16 @@ import { Router } from '@angular/router';
 })
 export class RegisterPageComponent implements OnInit {
 
-  public formSubmitted = false;
+  formSubmitted : boolean | null | undefined= false;
   countries: Country[];
   btnSubmit = document.getElementById("btn") as HTMLButtonElement;
 
-  private fb= inject( FormBuilder ) ;
-  private authService= inject(AuthService);
-  private router = inject(Router);
+  private authService   = inject(AuthService);
+  private stripeService = inject(StripeService);
+  private fb            = inject( FormBuilder ) ;
+  private router        = inject(Router);
+  public modalService   = inject(NgbModal);
+ // public dialog  = inject(MatDialog);
 
   firstNameAndLastnamePattern : string = '([a-zA-Z])';//Para validar que en el campo sea nombre y apellido juntos: '([a-zA-Z]+) ([a-zA-Z]+)'
   emailPattern : string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
@@ -31,8 +38,8 @@ export class RegisterPageComponent implements OnInit {
     primerApellido: ['',[Validators.required, Validators.minLength(2)]],
     segundoApellido: ['',[Validators.minLength(2)]],
     email: ['',[Validators.required, Validators.pattern(this.emailPattern)]],
-    password1: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
-    password2: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
+    password1: ['12345678',[Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
+    password2: ['12345678',[Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
     telefono: ['',[Validators.required]],
     ciudad: ['',[Validators.required]],
     pais: ['',[Validators.required]],
@@ -66,17 +73,29 @@ export class RegisterPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
- autenticar(): void {
+  async autenticar(){
+
   this.registerForm.markAllAsTouched();
-   this.formSubmitted=true;
    console.log(this.registerForm.value);
    const{ nombre, primerApellido, segundoApellido, telefono, email, password1,  ciudad, pais } = this.registerForm.value;
+
+   console.log("Vamos a Chequear de Stripe", email);
+   this.formSubmitted = await this.stripeService.getCustomerByEmail(email).toPromise();
+   console.log("Chequeado de Stripe " , this.formSubmitted );
+   if(!this.formSubmitted ){
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: ( "You must complete the membership payment." ),
+      //footer: '<a href="#">Why do I have this issue?</a>'
+    });
+    this.abrirModal();
+   } else {
 
     if(this.registerForm.invalid){
       console.log(this.registerForm.hasError);
       return;
     }
-
     //Realizar posteo
     this.authService.createMember( nombre, primerApellido, segundoApellido, telefono, email, password1,  ciudad, pais )
         .subscribe( (resp:any) => {
@@ -110,6 +129,12 @@ export class RegisterPageComponent implements OnInit {
           });
         });
       }
+
+   }
+
+
+
+
 
   isValidField( field: string){
 
@@ -172,6 +197,10 @@ export class RegisterPageComponent implements OnInit {
     (document.getElementById("btn") as HTMLButtonElement).classList.add('opacity-50');
     (document.getElementById("btn") as HTMLButtonElement).disabled = true;
   }
+
+  abrirModal(){
+        this.modalService.open(StripemodalComponent);
+      }
 
 
 }
